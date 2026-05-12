@@ -3,8 +3,12 @@
 // network. Strategy is stale-while-revalidate for the HTML + cache-first for
 // fonts. Bump CACHE_VERSION to force a refresh after content updates.
 
-const CACHE_VERSION = 'chj-iba-2026-v1';
-const CORE = ['/', '/index.html'];
+const CACHE_VERSION = 'chj-iba-2026-v2';
+const CORE = [
+  '/', '/index.html',
+  '/assets/champions-2026.jpg',
+  '/assets/champions-2026-sm.jpg'
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

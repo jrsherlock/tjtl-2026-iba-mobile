@@ -346,11 +346,41 @@ h1 em, h2 em { font-style: italic; color: var(--red); font-weight: 800; }
   position: relative; overflow: hidden;
 }
 .champ-medallion {
-  margin: 0 auto 1.5rem;
-  width: 130px; height: 130px;
+  margin: 0 auto 1.6rem;
+  width: 100%; max-width: 520px;
+  aspect-ratio: 3 / 2;
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--rule-2);
+  box-shadow:
+    0 18px 50px rgba(200,16,46,0.18),
+    0 2px 6px rgba(0,0,0,0.4);
+  background: var(--ink-3);
+  isolation: isolate;
 }
-.champ-medallion svg { width: 100%; height: 100%; }
+.champ-medallion img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.champ-medallion::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(10,7,7,0.6) 100%),
+    linear-gradient(180deg, rgba(10,7,7,0.18) 0%, transparent 25%);
+}
+.champ-medallion-caption {
+  position: absolute; left: 0; right: 0; bottom: 0.65rem;
+  text-align: center;
+  font-family: var(--label); font-weight: 700;
+  font-size: 0.58rem; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--bone);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+  z-index: 2;
+}
 .champ-line-1 {
   font-family: var(--label); font-weight: 700;
   font-size: 0.7rem; letter-spacing: 0.36em;
@@ -951,8 +981,15 @@ footer {
   }
   body::before, body::after { display: none !important; }
   .topbar, .fab-top, .share-btn, .scroll-cue,
-  .hero-glow, .vinyl-art, .champ-medallion, .group-photo,
+  .hero-glow, .vinyl-art, .group-photo,
   .featured-watch, .media-card, .listen, .deco-divider { display: none !important; }
+  .champ-medallion {
+    max-width: 4.5in; margin: 0 auto 0.2in !important;
+    box-shadow: none !important;
+    border: 1px solid #999 !important;
+  }
+  .champ-medallion::after { display: none !important; }
+  .champ-medallion-caption { color: #444 !important; text-shadow: none !important; }
   .hero { min-height: auto !important; padding: 0 0 0.3in !important; }
   .hero-bottom { animation: none !important; opacity: 1 !important; }
   .hero-center { margin: 0.2in 0 !important; animation: none !important; opacity: 1 !important; }
@@ -1089,34 +1126,16 @@ footer {
 
 <!-- ===== CHAMPIONSHIP BANNER ===== -->
 <section class="championship">
-  <div class="champ-medallion">
-    <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="medal" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#d92240"/>
-          <stop offset="100%" stop-color="#6a0816"/>
-        </linearGradient>
-        <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#e8c97a"/>
-          <stop offset="100%" stop-color="#8b7340"/>
-        </linearGradient>
-      </defs>
-      <!-- Laurel left -->
-      <path d="M30 65 Q15 50 18 30 Q28 38 30 50 Q33 60 30 65 Z M25 70 Q12 65 12 45 Q22 52 25 60 Q27 67 25 70 Z M28 80 Q14 80 12 60 Q22 65 27 73 Q30 78 28 80 Z" fill="url(#gold)" opacity="0.85"/>
-      <!-- Laurel right -->
-      <path d="M100 65 Q115 50 112 30 Q102 38 100 50 Q97 60 100 65 Z M105 70 Q118 65 118 45 Q108 52 105 60 Q103 67 105 70 Z M102 80 Q116 80 118 60 Q108 65 103 73 Q100 78 102 80 Z" fill="url(#gold)" opacity="0.85"/>
-      <!-- Ribbon -->
-      <path d="M50 95 L40 125 L55 115 L65 125 L65 95 Z" fill="url(#medal)"/>
-      <path d="M80 95 L90 125 L75 115 L65 125 L65 95 Z" fill="url(#medal)"/>
-      <!-- Medal circle -->
-      <circle cx="65" cy="60" r="34" fill="url(#medal)" stroke="url(#gold)" stroke-width="2.5"/>
-      <circle cx="65" cy="60" r="28" fill="none" stroke="#e8c97a" stroke-width="0.5" opacity="0.5"/>
-      <!-- Star -->
-      <path d="M65 44 L68 54 L78 54 L70 60 L73 70 L65 64 L57 70 L60 60 L52 54 L62 54 Z" fill="#e8c97a"/>
-      <!-- 4A text -->
-      <text x="65" y="84" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-style="italic" font-size="9" fill="#f4ede0">CLASS 4A</text>
-    </svg>
-  </div>
+  <figure class="champ-medallion">
+    <img
+      src="assets/champions-2026.jpg"
+      srcset="assets/champions-2026-sm.jpg 720w, assets/champions-2026.jpg 1280w"
+      sizes="(min-width: 1024px) 520px, (min-width: 720px) 480px, 92vw"
+      width="1280" height="853"
+      alt="The City High Jazz Ensemble with the 2026 Iowa Jazz Championships Class 4A trophy, gathered with Director Mr. Aaron Ottmar."
+      loading="lazy" decoding="async">
+    <figcaption class="champ-medallion-caption">Class 4A · State Champions</figcaption>
+  </figure>
   <div class="champ-line-1">★ State Champions · 2026 ★</div>
   <h2 class="champ-title">Iowa's <em>#1</em> Class 4A<br>Jazz Ensemble</h2>
   <p class="champ-sub">Crowned at the 2026 Iowa Jazz Championships, City High earns its place on the IBA stage among the state's finest.</p>
