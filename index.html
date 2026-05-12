@@ -70,7 +70,7 @@ h1, h2, h3,
 .hero-meta-value, .hero-school, .hero-tag,
 .champ-title, .champ-sub, .champ-stat-num,
 .track-title, .track-num, .lp-side, .section-group-name,
-.featured-title, .media-title, .director-name, .director-role,
+.director-name, .director-role,
 .bio-name, .bio-year, .deco-divider-mark, .footer-school, .footer-motto,
 .musician-name, .musician-initials, .thanks-text {
   font-feature-settings: "ss01", "ss02", "kern", "liga", "calt";
@@ -645,28 +645,6 @@ section { padding: 5rem 1.5rem; position: relative; }
 }
 .track-notes-inner p + p { margin-top: 0.7rem; }
 
-/* Pending links (Listen-section cards / featured watch without real URLs yet) */
-.media-card[data-pending],
-.featured-watch[data-pending] {
-  opacity: 0.55;
-  filter: grayscale(0.3);
-  pointer-events: none;
-  cursor: default;
-  position: relative;
-}
-.media-card[data-pending]::after,
-.featured-watch[data-pending]::after {
-  content: "Coming soon";
-  position: absolute; top: 8px; right: 10px;
-  font-family: var(--label); font-weight: 700;
-  font-size: 0.52rem; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--gold);
-  background: rgba(10,7,7,0.7);
-  padding: 0.25rem 0.5rem; border-radius: 999px;
-  border: 1px solid var(--rule-2);
-  pointer-events: none;
-}
-
 /* ===== MUSICIANS ===== */
 .musicians { background: var(--ink); }
 
@@ -872,84 +850,6 @@ section { padding: 5rem 1.5rem; position: relative; }
 }
 .bio-text p + p { margin-top: 0.8rem; }
 
-/* ===== LISTEN ===== */
-.listen { background: linear-gradient(180deg, var(--ink) 0%, #0d0907 100%); }
-
-.featured-watch {
-  display: block;
-  background: linear-gradient(135deg, rgba(200,16,46,0.18), rgba(106,8,22,0.4));
-  border: 1px solid rgba(200,16,46,0.4);
-  border-radius: 10px;
-  padding: 1.8rem 1.4rem;
-  margin-bottom: 2rem;
-  position: relative; overflow: hidden;
-}
-.featured-watch::before {
-  content: ""; position: absolute; top: -50%; right: -20%;
-  width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,16,46,0.3), transparent 70%);
-  filter: blur(20px);
-}
-.featured-eyebrow { position: relative; margin-bottom: 0.5rem; }
-.featured-title {
-  font-family: var(--display); font-weight: 700;
-  font-size: 1.4rem; line-height: 1.2;
-  letter-spacing: -0.01em; margin-bottom: 0.4rem;
-  position: relative;
-}
-.featured-sub {
-  font-size: 0.88rem; color: var(--cream); margin-bottom: 1.2rem;
-  position: relative; line-height: 1.5;
-}
-.featured-cta {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  background: var(--red); color: var(--bone);
-  padding: 0.75rem 1.1rem; border-radius: 999px;
-  font-family: var(--label); font-weight: 700;
-  font-size: 0.66rem; letter-spacing: 0.22em;
-  text-transform: uppercase;
-  position: relative;
-  transition: transform 0.15s ease;
-}
-.featured-cta:active { transform: scale(0.97); }
-
-.media-card {
-  background: var(--ink-2);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 1.2rem;
-  margin-bottom: 0.85rem;
-  display: flex; gap: 1rem; align-items: center;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-.media-card:active { border-color: var(--red); background: var(--ink-3); }
-.media-icon {
-  width: 52px; height: 52px;
-  background: var(--red); border-radius: 8px;
-  display: grid; place-items: center;
-  flex-shrink: 0; position: relative; overflow: hidden;
-}
-.media-icon::before {
-  content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 60%);
-}
-.media-icon svg { position: relative; z-index: 1; }
-.media-meta { flex: 1; min-width: 0; }
-.media-platform {
-  font-family: var(--label); font-weight: 700;
-  font-size: 0.58rem; letter-spacing: 0.26em;
-  text-transform: uppercase; color: var(--red);
-  margin-bottom: 0.2rem;
-}
-.media-title {
-  font-family: var(--display); font-weight: 700;
-  font-size: 1.02rem; line-height: 1.2; margin-bottom: 0.15rem;
-}
-.media-sub {
-  font-family: var(--body); font-size: 0.76rem; color: var(--muted);
-}
-.media-arrow { color: var(--cream); font-size: 1.2rem; }
-
 /* ===== ABOUT ===== */
 .about { background: var(--ink); }
 .about-prose p {
@@ -1136,7 +1036,7 @@ footer {
   body::before, body::after { display: none !important; }
   .topbar, .fab-top, .share-btn, .scroll-cue,
   .hero-glow, .vinyl-art, .group-photo,
-  .featured-watch, .media-card, .listen, .deco-divider, .marquee { display: none !important; }
+  .deco-divider, .marquee { display: none !important; }
   .champ-medallion {
     max-width: 4.5in; margin: 0 auto 0.2in !important;
     box-shadow: none !important;
@@ -1149,11 +1049,11 @@ footer {
   .hero-center { margin: 0.2in 0 !important; animation: none !important; opacity: 1 !important; }
   .hero-top { animation: none !important; opacity: 1 !important; }
   h1, h2, h3 { color: #000 !important; }
-  h1 em, h2 em, .lp-side, .track-num, .featured-title em { color: #6a0816 !important; }
+  h1 em, h2 em, .lp-side, .track-num { color: #6a0816 !important; }
   .eyebrow, .musician-instr, .track-soloists, .musician-honor,
   .thanks-label, .section-group-count, .hero-meta-label { color: #6a0816 !important; }
   .track-credits, .track-credits em, .section-intro, .director-role, .director-bio,
-  .about-prose p, .musician-year, .footer-motto, .thanks-text, .bio-text, .featured-sub,
+  .about-prose p, .musician-year, .footer-motto, .thanks-text, .bio-text,
   .hero-meta-value, .hero-meta-sub, .hero-school { color: #222 !important; }
   section, footer { page-break-inside: avoid; padding: 0.2in 0 !important; }
   .championship { padding: 0.2in 0 !important; border-top: 1px solid #999; }
@@ -1240,7 +1140,6 @@ footer {
   <div class="topbar-nav" role="tablist">
     <a href="#program"   class="topbar-link" data-jump>Program</a>
     <a href="#musicians" class="topbar-link" data-jump>Players</a>
-    <a href="#listen"    class="topbar-link" data-jump>Listen</a>
     <a href="#about"     class="topbar-link" data-jump>About</a>
   </div>
 </nav>
@@ -1653,67 +1552,6 @@ footer {
   </div>
 </section>
 
-<!-- ===== LISTEN ===== -->
-<section class="listen" id="listen">
-  <div class="section-head">
-    <div class="eyebrow">Recordings</div>
-    <h2>Listen &amp; <em>Watch</em></h2>
-    <p class="section-intro">Studio cuts and live performances from the 2025–26 season, all on YouTube.</p>
-  </div>
-
-  <a href="#" class="featured-watch">
-    <div class="featured-eyebrow eyebrow">Featured · State Final</div>
-    <div class="featured-title">2026 Iowa Jazz Championships · Full Performance</div>
-    <div class="featured-sub">The complete City High set from the night they were crowned Class 4A state champions.</div>
-    <div class="featured-cta">
-      <svg width="11" height="13" viewBox="0 0 11 13"><path d="M0 0L11 6.5L0 13Z" fill="#f4ede0"/></svg>
-      Watch on YouTube
-    </div>
-  </a>
-
-  <a href="#" class="media-card">
-    <div class="media-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418a2.506 2.506 0 0 0-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814a2.506 2.506 0 0 0 1.768 1.768C5.746 20 12 20 12 20s6.254 0 7.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM10 15.464V8.536L16 12l-6 3.464z" fill="#f4ede0"/>
-      </svg>
-    </div>
-    <div class="media-meta">
-      <div class="media-platform">YouTube · Channel</div>
-      <div class="media-title">City High Bands</div>
-      <div class="media-sub">Full archive of performances, including the 2026 state final</div>
-    </div>
-    <div class="media-arrow">→</div>
-  </a>
-
-  <a href="#" class="media-card">
-    <div class="media-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418a2.506 2.506 0 0 0-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814a2.506 2.506 0 0 0 1.768 1.768C5.746 20 12 20 12 20s6.254 0 7.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM10 15.464V8.536L16 12l-6 3.464z" fill="#f4ede0"/>
-      </svg>
-    </div>
-    <div class="media-meta">
-      <div class="media-platform">YouTube · Playlist</div>
-      <div class="media-title">Tonight's Program · All 7 Selections</div>
-      <div class="media-sub">Studio recordings of every selection on tonight's set list</div>
-    </div>
-    <div class="media-arrow">→</div>
-  </a>
-
-  <a href="#" class="media-card">
-    <div class="media-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418a2.506 2.506 0 0 0-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814a2.506 2.506 0 0 0 1.768 1.768C5.746 20 12 20 12 20s6.254 0 7.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM10 15.464V8.536L16 12l-6 3.464z" fill="#f4ede0"/>
-      </svg>
-    </div>
-    <div class="media-meta">
-      <div class="media-platform">YouTube · Highlight</div>
-      <div class="media-title">A Year in the Band Room</div>
-      <div class="media-sub">Rehearsal footage, candid moments, and the road to the title</div>
-    </div>
-    <div class="media-arrow">→</div>
-  </a>
-</section>
-
 <!-- ===== ABOUT ===== -->
 <section class="about" id="about">
   <div class="section-head">
@@ -1952,7 +1790,7 @@ shareBtn.addEventListener('click', async () => {
 });
 
 // ===== Scroll-spy for the topbar (highlights active section) =====
-const sections = ['top', 'program', 'musicians', 'listen', 'about']
+const sections = ['top', 'program', 'musicians', 'about']
   .map(id => document.getElementById(id))
   .filter(Boolean);
 const navLinks = document.querySelectorAll('.topbar-link');
