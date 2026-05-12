@@ -31,7 +31,7 @@
 <!-- Fonts: trimmed weights, swap for fast first paint, preconnect for warm DNS/TCP -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Archivo:wght@600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,500,30,0;0,9..144,700,40,0;0,9..144,800,50,1;0,9..144,900,60,1;1,9..144,500,40,1;1,9..144,700,50,1;1,9..144,900,70,1&family=Archivo:wght@600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -50,10 +50,27 @@
   --gold-deep: #8b7340;
   --rule:      rgba(244,237,224,0.10);
   --rule-2:    rgba(244,237,224,0.18);
-  --display:   "Bodoni Moda", "Didot", "Times New Roman", serif;
+  --display:   "Fraunces", "Iowan Old Style", "Charter", "Georgia", serif;
   --label:     "Archivo", "Helvetica Neue", sans-serif;
   --body:      "Hanken Grotesk", "Helvetica Neue", sans-serif;
 }
+
+/* Fraunces tuning — slight optical and tracking adjustments to compensate
+   for its wider x-height and warmer terminals vs. the prior Bodoni Moda. */
+h1, h2, h3,
+.hero-meta-value, .hero-school, .hero-tag,
+.champ-title, .champ-sub, .champ-stat-num,
+.track-title, .track-num, .lp-side, .section-group-name,
+.featured-title, .media-title, .director-name, .director-role,
+.bio-name, .bio-year, .deco-divider-mark, .footer-school, .footer-motto,
+.musician-name, .musician-initials, .thanks-text {
+  font-feature-settings: "ss01", "ss02", "kern", "liga", "calt";
+}
+h1 { letter-spacing: -0.035em; }
+h2 { letter-spacing: -0.022em; }
+.champ-title { letter-spacing: -0.028em; }
+.track-title { letter-spacing: -0.015em; }
+.track-num { letter-spacing: -0.06em; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html {
@@ -1118,7 +1135,7 @@ footer {
       <!-- Star -->
       <path d="M65 44 L68 54 L78 54 L70 60 L73 70 L65 64 L57 70 L60 60 L52 54 L62 54 Z" fill="#e8c97a"/>
       <!-- 4A text -->
-      <text x="65" y="84" text-anchor="middle" font-family="Bodoni Moda, serif" font-weight="900" font-style="italic" font-size="9" fill="#f4ede0">CLASS 4A</text>
+      <text x="65" y="84" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-style="italic" font-size="9" fill="#f4ede0">CLASS 4A</text>
     </svg>
   </div>
   <div class="champ-line-1">★ State Champions · 2026 ★</div>
@@ -1164,8 +1181,8 @@ footer {
       <circle cx="100" cy="100" r="48" fill="none" stroke="rgba(244,237,224,0.06)" stroke-width="0.3"/>
       <circle cx="100" cy="100" r="36" fill="#c8102e"/>
       <circle cx="100" cy="100" r="36" fill="none" stroke="#e8c97a" stroke-width="0.4" opacity="0.4"/>
-      <text x="100" y="92" text-anchor="middle" font-family="Bodoni Moda, serif" font-weight="800" font-style="italic" font-size="9" fill="#f4ede0">CITY HIGH</text>
-      <text x="100" y="103" text-anchor="middle" font-family="Bodoni Moda, serif" font-weight="700" font-size="6" fill="#f4ede0" opacity="0.85">JAZZ ENSEMBLE</text>
+      <text x="100" y="92" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="800" font-style="italic" font-size="9" fill="#f4ede0">CITY HIGH</text>
+      <text x="100" y="103" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="6" fill="#f4ede0" opacity="0.85">JAZZ ENSEMBLE</text>
       <text x="100" y="115" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="4" fill="#f4ede0" opacity="0.7" letter-spacing="0.2em">IBA · 2026</text>
       <circle cx="100" cy="100" r="3" fill="#0a0707"/>
     </svg>
