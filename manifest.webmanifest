@@ -1,0 +1,19 @@
+{
+  "name": "City High Jazz Ensemble · IBA 2026",
+  "short_name": "City High Jazz",
+  "description": "2026 Iowa Class 4A Jazz Champions perform at the 97th IBA Conference — Thu, May 14, 2026.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0707",
+  "theme_color": "#0a0707",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%230a0707'/><circle cx='256' cy='256' r='176' fill='%23c8102e'/><text x='256' y='336' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-weight='900' font-size='220' fill='%23f4ede0'>J</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
