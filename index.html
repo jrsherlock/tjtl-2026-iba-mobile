@@ -564,8 +564,8 @@ section { padding: 5rem 1.5rem; position: relative; }
   position: relative; padding: 1.4rem 0;
   border-top: 1px solid var(--rule);
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  gap: 0.9rem; align-items: start;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem; align-items: start;
   cursor: pointer; transition: background 0.25s ease;
   min-height: 44px;
   -webkit-tap-highlight-color: transparent;
@@ -604,13 +604,6 @@ section { padding: 5rem 1.5rem; position: relative; }
   text-transform: uppercase; color: var(--gold);
   margin-top: 0.4rem; line-height: 1.5;
 }
-.track-duration {
-  font-family: var(--label); font-weight: 600;
-  font-size: 0.72rem; letter-spacing: 0.16em;
-  color: var(--faint); padding-top: 0.5rem;
-  font-variant-numeric: tabular-nums;
-}
-
 .track-expand {
   width: 22px; height: 22px;
   display: grid; place-items: center;
@@ -1282,7 +1275,7 @@ footer {
 
   <div class="lp-divider">
     <span class="lp-side">Side A</span>
-    <span class="lp-side-sub">Five Tracks · ~26 min</span>
+    <span class="lp-side-sub">Five Selections</span>
     <div class="lp-divider-line"></div>
   </div>
 
@@ -1294,7 +1287,6 @@ footer {
         <div class="track-credits">Michele Fernandez</div>
         <div class="track-soloists">Featuring · Tenor Saxophone, Lead Trumpet</div>
       </div>
-      <div class="track-duration">4:45</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1310,7 +1302,6 @@ footer {
         <div class="track-credits">Benny Carter</div>
         <div class="track-soloists">Featuring · Alto Saxophone, Trumpet</div>
       </div>
-      <div class="track-duration">5:30</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1326,7 +1317,6 @@ footer {
         <div class="track-credits">Marshall Gilkes</div>
         <div class="track-soloists">Featuring · Trombone, Piano</div>
       </div>
-      <div class="track-duration">6:15</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1342,7 +1332,6 @@ footer {
         <div class="track-credits">Thad Jones · <em>arr. Bob Brookmeyer</em></div>
         <div class="track-soloists">Featuring · Flugelhorn, Piano</div>
       </div>
-      <div class="track-duration">5:30</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1358,7 +1347,6 @@ footer {
         <div class="track-credits">Neal Hefti</div>
         <div class="track-soloists">Featuring · Drum Set</div>
       </div>
-      <div class="track-duration">4:15</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1371,7 +1359,7 @@ footer {
 
   <div class="lp-divider">
     <span class="lp-side">Side B</span>
-    <span class="lp-side-sub">Four Tracks · ~24 min</span>
+    <span class="lp-side-sub">Four Selections</span>
     <div class="lp-divider-line"></div>
   </div>
 
@@ -1383,7 +1371,6 @@ footer {
         <div class="track-credits">Roy Hargrove</div>
         <div class="track-soloists">Featuring · Trumpet, Tenor Saxophone</div>
       </div>
-      <div class="track-duration">6:00</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1399,7 +1386,6 @@ footer {
         <div class="track-credits">Bob Mintzer</div>
         <div class="track-soloists">Featuring · Tenor Saxophone, Bass</div>
       </div>
-      <div class="track-duration">5:45</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1415,7 +1401,6 @@ footer {
         <div class="track-credits">Gordon Goodwin</div>
         <div class="track-soloists">Featuring · Full Ensemble</div>
       </div>
-      <div class="track-duration">5:15</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
@@ -1431,7 +1416,6 @@ footer {
         <div class="track-credits">Joe Gallardo · <em>arr. Michael Philip Mossman</em></div>
         <div class="track-soloists">Featuring · Trumpet, Percussion</div>
       </div>
-      <div class="track-duration">6:30</div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
