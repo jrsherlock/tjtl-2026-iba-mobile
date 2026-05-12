@@ -564,8 +564,8 @@ section { padding: 5rem 1.5rem; position: relative; }
   position: relative; padding: 1.4rem 0;
   border-top: 1px solid var(--rule);
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 1rem; align-items: start;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 0.9rem; align-items: start;
   cursor: pointer; transition: background 0.25s ease;
   min-height: 44px;
   -webkit-tap-highlight-color: transparent;
@@ -612,18 +612,14 @@ section { padding: 5rem 1.5rem; position: relative; }
 }
 
 .track-expand {
-  position: absolute; top: 1.5rem; right: 0;
-  width: 28px; height: 28px;
+  width: 22px; height: 22px;
   display: grid; place-items: center;
   color: var(--muted);
+  padding-top: 0.45rem;
   transition: transform 0.3s ease, color 0.2s ease;
 }
-.track.open .track-expand { transform: rotate(45deg); color: var(--red); }
-.track-expand::before, .track-expand::after {
-  content: ""; position: absolute; background: currentColor;
-}
-.track-expand::before { width: 12px; height: 1.5px; }
-.track-expand::after  { width: 1.5px; height: 12px; }
+.track-expand svg { width: 14px; height: 14px; display: block; }
+.track.open .track-expand { transform: rotate(180deg); color: var(--red); }
 
 .track-notes {
   grid-column: 1 / -1;
@@ -1299,7 +1295,7 @@ footer {
         <div class="track-soloists">Featuring · Tenor Saxophone, Lead Trumpet</div>
       </div>
       <div class="track-duration">4:45</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Grammy-nominated composer and educator Michele Fernandez has become one of the defining voices in contemporary big band writing. 'Bloo Phunk Strut' lives in the territory where blues meets funk, opening the night with the kind of pocket and pulse that wakes a room up.</p>
@@ -1315,7 +1311,7 @@ footer {
         <div class="track-soloists">Featuring · Alto Saxophone, Trumpet</div>
       </div>
       <div class="track-duration">5:30</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Benny Carter (1907 to 2003), alto saxophonist, trumpeter, arranger, and bandleader, wrote and arranged across nearly eight decades and is widely regarded as the architect of the modern saxophone section. 'Movin' Uptown' is a clinic in ensemble swing and sectional precision.</p>
@@ -1331,7 +1327,7 @@ footer {
         <div class="track-soloists">Featuring · Trombone, Piano</div>
       </div>
       <div class="track-duration">6:15</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Contemporary trombonist and composer Marshall Gilkes, whose work with Germany's WDR Big Band has reshaped the modern jazz orchestra, brings the harmonic depth and rhythmic intricacy of his small-group writing to the big band format in 'Fresh Start.'</p>
@@ -1347,7 +1343,7 @@ footer {
         <div class="track-soloists">Featuring · Flugelhorn, Piano</div>
       </div>
       <div class="track-duration">5:30</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Thad Jones' 1969 ballad has become one of the most-recorded standards in the modern big band canon. The chord movement and unmistakable melody make this a fixture of the literature, and a moment of repose mid-program.</p>
@@ -1363,7 +1359,7 @@ footer {
         <div class="track-soloists">Featuring · Drum Set</div>
       </div>
       <div class="track-duration">4:15</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Composed by Neal Hefti in 1958 and made famous by Count Basie, 'Cute' is one of the most beloved drum features in the big band literature. The chart's economy and the drummer's brushwork carry the whole tune.</p>
@@ -1388,7 +1384,7 @@ footer {
         <div class="track-soloists">Featuring · Trumpet, Tenor Saxophone</div>
       </div>
       <div class="track-duration">6:00</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Roy Hargrove (1969 to 2018) was one of the defining trumpet voices of his generation, equally compelling in straight-ahead, Afro-Cuban, and contemporary settings. 'Roy Allan' showcases the lyricism and rhythmic poise that made his playing unmistakable.</p>
@@ -1404,7 +1400,7 @@ footer {
         <div class="track-soloists">Featuring · Tenor Saxophone, Bass</div>
       </div>
       <div class="track-duration">5:45</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Bob Mintzer is a Grammy-winning saxophonist, arranger, and bandleader whose charts have been performed by every major jazz orchestra of the past four decades. 'Niner Two' is Mintzer in his signature mode: harmonically rich, rhythmically tight, demanding ensemble precision at every turn.</p>
@@ -1420,7 +1416,7 @@ footer {
         <div class="track-soloists">Featuring · Full Ensemble</div>
       </div>
       <div class="track-duration">5:15</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Gordon Goodwin's Big Phat Band has redefined what a modern jazz orchestra can sound like. 'Sing Sang Sung' fuses Basie-style swing with contemporary rhythmic and harmonic vocabulary, a fitting prelude to the night's Latin closer.</p>
@@ -1436,7 +1432,7 @@ footer {
         <div class="track-soloists">Featuring · Trumpet, Percussion</div>
       </div>
       <div class="track-duration">6:30</div>
-      <div class="track-expand" aria-hidden="true"></div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
           <p>Composed by Texas-based Latin jazz veteran Joe Gallardo and arranged by Michael Philip Mossman, the internationally recognized trumpeter and one of the leading voices in Latin big band writing, 'Veneros' brings Afro-Cuban energy and layered percussion to the closing of the night.</p>
