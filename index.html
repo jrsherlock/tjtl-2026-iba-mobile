@@ -421,50 +421,87 @@ h1 em, h2 em { font-style: italic; color: var(--red); font-weight: 800; }
   margin-top: 0.5rem; line-height: 1.3;
 }
 
-/* ===== Program highlights (the credibility bullets pulled from the poster) ===== */
-.champ-program {
-  margin: 2rem auto 0;
-  max-width: 560px;
-  text-align: left;
-}
-.champ-program-head {
-  display: flex; align-items: center; gap: 0.7rem;
-  margin-bottom: 1.1rem;
-  font-family: var(--label); font-weight: 700;
-  font-size: 0.62rem; letter-spacing: 0.32em;
-  text-transform: uppercase; color: var(--gold);
-}
-.champ-program-head::before,
-.champ-program-head::after {
-  content: ""; flex: 1; height: 1px; background: var(--rule);
-}
-.champ-highlights {
-  list-style: none;
-  display: flex; flex-direction: column;
+/* ===== Program highlights grid (about section) ===== */
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.85rem;
+  margin: 1.4rem 0 0;
 }
-.champ-highlights li {
-  display: grid; grid-template-columns: 1.2rem 1fr;
-  gap: 0.7rem; align-items: start;
-  font-family: var(--body); font-size: 0.92rem;
-  color: var(--cream); line-height: 1.5;
+.highlight-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.15rem 1.3rem 1.2rem;
+  background: var(--ink-2);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
 }
-.champ-highlight-mark {
-  font-family: var(--display-italic, var(--display));
-  font-style: italic; font-weight: 900;
-  color: var(--red); font-size: 1.1rem;
-  line-height: 1; padding-top: 0.05rem;
+.highlight-card::before {
+  content: "";
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--red), rgba(106,8,22,0.6));
 }
-.champ-highlights em {
+.highlight-card::after {
+  content: "";
+  position: absolute; top: -20%; right: -10%;
+  width: 110px; height: 110px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,16,46,0.10), transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+.highlight-card:hover {
+  border-color: rgba(200,16,46,0.35);
+  background: var(--ink-3);
+}
+.highlight-icon {
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, rgba(200,16,46,0.22), rgba(106,8,22,0.4));
+  border: 1px solid rgba(200,16,46,0.45);
+  border-radius: 8px;
+  color: var(--bone);
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(200,16,46,0.18);
+}
+.highlight-icon svg { width: 26px; height: 26px; }
+.highlight-body { min-width: 0; position: relative; z-index: 1; }
+.highlight-eyebrow {
+  font-family: var(--label); font-weight: 700;
+  font-size: 0.56rem; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--red);
+  margin-bottom: 0.4rem;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+}
+.highlight-eyebrow::after {
+  content: ""; width: 18px; height: 1px; background: rgba(200,16,46,0.55);
+}
+.highlight-title {
+  font-family: var(--display); font-weight: 700;
+  font-size: 1.18rem; letter-spacing: -0.01em;
+  color: var(--bone); line-height: 1.18;
+  margin-bottom: 0.4rem;
+}
+.highlight-text {
+  font-family: var(--body); font-size: 0.9rem;
+  color: var(--cream); line-height: 1.55;
+}
+.highlight-text em {
   font-family: var(--display-italic, var(--display));
   font-style: italic; font-weight: 700;
   color: var(--bone);
 }
 @media (min-width: 720px) {
-  .champ-highlights {
-    display: grid; grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
+  .program-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
+  .highlight-card.span-2 { grid-column: 1 / -1; }
 }
 
 /* ===== GENERIC SECTION ===== */
@@ -1053,9 +1090,22 @@ footer {
   .track-notes-inner { background: #f5f0e6 !important; border-left-color: #6a0816 !important; }
   .track-expand { display: none !important; }
   .bio-modal, .bio-modal.open { display: none !important; }
-  .director-card, .thanks-block, .musician {
+  .director-card, .thanks-block, .musician, .highlight-card {
     background: #fafafa !important; border: 1px solid #ccc !important;
   }
+  .highlight-card::before, .highlight-card::after { display: none !important; }
+  .highlight-icon {
+    background: #f0e6e8 !important;
+    border-color: #c8102e !important;
+    color: #6a0816 !important;
+    box-shadow: none !important;
+  }
+  .highlight-title, .highlight-title em { color: #000 !important; }
+  .highlight-eyebrow { color: #6a0816 !important; }
+  .highlight-eyebrow::after { background: #c8102e !important; }
+  .highlight-text, .highlight-text em { color: #222 !important; }
+  .program-grid { grid-template-columns: 1fr 1fr !important; gap: 0.12in !important; }
+  .highlight-card.span-2 { grid-column: 1 / -1 !important; }
   .director-photo, .musician-photo { background: #ddd !important; color: #333 !important; }
   .musicians-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 0.15in !important; }
   a[data-pending]::after { display: none !important; }
@@ -1198,31 +1248,6 @@ footer {
     </div>
   </div>
 
-  <div class="champ-program">
-    <div class="champ-program-head">Program at a Glance</div>
-    <ul class="champ-highlights">
-      <li>
-        <span class="champ-highlight-mark">★</span>
-        <span>Four extracurricular jazz ensembles for City High music students.</span>
-      </li>
-      <li>
-        <span class="champ-highlight-mark">★</span>
-        <span>Open placement — every student who completes a September audition is placed in a jazz band.</span>
-      </li>
-      <li>
-        <span class="champ-highlight-mark">★</span>
-        <span>Annual jazz band trip to <em>Chicago</em>.</span>
-      </li>
-      <li>
-        <span class="champ-highlight-mark">★</span>
-        <span>Annual collaboration with a professional jazz musician at the <em>City High Jazz Showcase</em>.</span>
-      </li>
-      <li>
-        <span class="champ-highlight-mark">★</span>
-        <span>Recent invitations to perform alongside the <em>Iowa Jazz Composers Orchestra</em>, <em>UNI Jazz Band One</em>, and the <em>University of Iowa Johnson County Landmark Ensembles</em>.</span>
-      </li>
-    </ul>
-  </div>
 </section>
 
 <!-- ===== PROGRAM ===== -->
@@ -1678,6 +1703,89 @@ footer {
     <p>The City High Jazz Ensemble is the flagship of a band program with deep roots in Iowa music education. Founded as part of one of the first comprehensive instrumental programs in the state, the ensemble has trained generations of Iowa City musicians and sent students on to study at conservatories and university music schools across the country.</p>
     <p>Under the direction of Mr. Aaron Ottmar, the City High Jazz Ensemble has built a reputation as one of the strongest high school jazz programs in Iowa. In April 2026, the ensemble captured the Iowa Jazz Championships title in Class 4A, earning the right to represent the state's largest classification on the IBA stage tonight.</p>
     <p>City High Jazz is grateful to the band parents, private instructors, school administrators, and members of the Iowa City community whose support over decades has made this evening possible.</p>
+  </div>
+
+  <div class="deco-divider">
+    <div class="deco-divider-line"></div>
+    <span class="deco-divider-mark">§</span>
+    <div class="deco-divider-line"></div>
+  </div>
+
+  <div class="eyebrow gold">The Program</div>
+  <h3 style="margin-top:0.5rem;margin-bottom:0.4rem;">Program at a <em style="color:var(--red);">Glance</em></h3>
+  <p class="section-intro" style="margin-top:0; margin-bottom:0.4rem;">Five things to know about jazz at City High.</p>
+
+  <div class="program-grid">
+    <article class="highlight-card">
+      <div class="highlight-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7.5" height="7.5" rx="1.2"/>
+          <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.2"/>
+          <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.2"/>
+          <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.2"/>
+        </svg>
+      </div>
+      <div class="highlight-body">
+        <div class="highlight-eyebrow">Depth</div>
+        <h4 class="highlight-title">Four Jazz Ensembles</h4>
+        <p class="highlight-text">Four extracurricular jazz ensembles run inside the City High music program, giving students room to grow across all four years.</p>
+      </div>
+    </article>
+
+    <article class="highlight-card">
+      <div class="highlight-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M8 12.5l3 3 5-6"/>
+        </svg>
+      </div>
+      <div class="highlight-body">
+        <div class="highlight-eyebrow">Access</div>
+        <h4 class="highlight-title">Open Placement</h4>
+        <p class="highlight-text">Every student who completes a September audition earns a spot in a jazz band — no one is turned away from the program.</p>
+      </div>
+    </article>
+
+    <article class="highlight-card">
+      <div class="highlight-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a7 7 0 0 1 7 7c0 5.2-7 13-7 13S5 14.2 5 9a7 7 0 0 1 7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+      </div>
+      <div class="highlight-body">
+        <div class="highlight-eyebrow">Tradition</div>
+        <h4 class="highlight-title">Annual <em>Chicago</em> Trip</h4>
+        <p class="highlight-text">Each year, the jazz program travels to Chicago to study, listen, and play in one of the great American jazz cities.</p>
+      </div>
+    </article>
+
+    <article class="highlight-card">
+      <div class="highlight-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="2" width="6" height="11" rx="3"/>
+          <path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/>
+        </svg>
+      </div>
+      <div class="highlight-body">
+        <div class="highlight-eyebrow">Showcase</div>
+        <h4 class="highlight-title">A Professional Guest, Every Year</h4>
+        <p class="highlight-text">An annual collaboration with a working jazz musician anchors the <em>City High Jazz Showcase</em> — bringing the profession into the band room.</p>
+      </div>
+    </article>
+
+    <article class="highlight-card span-2">
+      <div class="highlight-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L14.4 8.3L21 9.3L16 14L17.2 21L12 17.8L6.8 21L8 14L3 9.3L9.6 8.3L12 2z"/>
+        </svg>
+      </div>
+      <div class="highlight-body">
+        <div class="highlight-eyebrow">Recognition</div>
+        <h4 class="highlight-title">Recent Guest Stages</h4>
+        <p class="highlight-text">City High Jazz has recently been invited to perform alongside the <em>Iowa Jazz Composers Orchestra</em>, <em>UNI Jazz Band One</em>, and the University of Iowa <em>Johnson County Landmark Ensembles</em> — peers from across Iowa's professional and collegiate jazz scene.</p>
+      </div>
+    </article>
   </div>
 
   <div class="deco-divider">
