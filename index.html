@@ -549,19 +549,7 @@ section { padding: 5rem 1.5rem; position: relative; }
 }
 .track-notes-inner p + p { margin-top: 0.7rem; }
 
-.track-listen {
-  margin-top: 1rem; display: inline-flex;
-  align-items: center; gap: 0.55rem;
-  font-family: var(--label); font-weight: 700;
-  font-size: 0.62rem; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--bone);
-  padding: 0.65rem 1rem;
-  background: var(--red); border-radius: 999px;
-  transition: transform 0.15s ease;
-}
-.track-listen:active { transform: scale(0.96); }
-/* Tracks with no real URL yet — visually present but signal "not yet live" */
-.track-listen[data-pending],
+/* Pending links (Listen-section cards / featured watch without real URLs yet) */
 .media-card[data-pending],
 .featured-watch[data-pending] {
   opacity: 0.55;
@@ -570,7 +558,6 @@ section { padding: 5rem 1.5rem; position: relative; }
   cursor: default;
   position: relative;
 }
-.track-listen[data-pending]::after,
 .media-card[data-pending]::after,
 .featured-watch[data-pending]::after {
   content: "Coming soon";
@@ -582,14 +569,6 @@ section { padding: 5rem 1.5rem; position: relative; }
   padding: 0.25rem 0.5rem; border-radius: 999px;
   border: 1px solid var(--rule-2);
   pointer-events: none;
-}
-.track-listen[data-pending]::after { top: 50%; transform: translateY(-50%); right: 12px; }
-.track-listen .play-icon {
-  width: 0; height: 0;
-  border-left: 7px solid var(--bone);
-  border-top: 4.5px solid transparent;
-  border-bottom: 4.5px solid transparent;
-  margin-left: 1px;
 }
 
 /* ===== MUSICIANS ===== */
@@ -1017,7 +996,7 @@ footer {
   }
   .director-photo, .musician-photo { background: #ddd !important; color: #333 !important; }
   .musicians-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 0.15in !important; }
-  a[data-pending]::after, .track-listen { display: none !important; }
+  a[data-pending]::after { display: none !important; }
   a[href]::after {
     content: " (" attr(href) ")";
     font-size: 0.7em; color: #555;
@@ -1229,7 +1208,6 @@ footer {
         <div class="track-notes-inner">
           <p>Grammy-nominated composer and educator Michele Fernandez has become one of the defining voices in contemporary big band writing. 'Bloo Phunk Strut' lives in the territory where blues meets funk, opening the night with the kind of pocket and pulse that wakes a room up.</p>
           
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1246,7 +1224,6 @@ footer {
         <div class="track-notes-inner">
           <p>Benny Carter (1907 to 2003), alto saxophonist, trumpeter, arranger, and bandleader, wrote and arranged across nearly eight decades and is widely regarded as the architect of the modern saxophone section. 'Movin' Uptown' is a clinic in ensemble swing and sectional precision.</p>
           
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1263,7 +1240,6 @@ footer {
         <div class="track-notes-inner">
           <p>Contemporary trombonist and composer Marshall Gilkes, whose work with Germany's WDR Big Band has reshaped the modern jazz orchestra, brings the harmonic depth and rhythmic intricacy of his small-group writing to the big band format in 'Fresh Start.'</p>
           
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1280,7 +1256,6 @@ footer {
         <div class="track-notes-inner">
           <p>Thad Jones' 1969 ballad has become one of the most-recorded standards in the modern big band canon. The chord movement and unmistakable melody make this a fixture of the literature, and a moment of repose mid-program.</p>
           <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1297,7 +1272,6 @@ footer {
         <div class="track-notes-inner">
           <p>Composed by Neal Hefti in 1958 and made famous by Count Basie, 'Cute' is one of the most beloved drum features in the big band literature. The chart's economy and the drummer's brushwork carry the whole tune.</p>
           <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1323,7 +1297,6 @@ footer {
         <div class="track-notes-inner">
           <p>Roy Hargrove (1969 to 2018) was one of the defining trumpet voices of his generation, equally compelling in straight-ahead, Afro-Cuban, and contemporary settings. 'Roy Allan' showcases the lyricism and rhythmic poise that made his playing unmistakable.</p>
           
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1340,7 +1313,6 @@ footer {
         <div class="track-notes-inner">
           <p>Bob Mintzer is a Grammy-winning saxophonist, arranger, and bandleader whose charts have been performed by every major jazz orchestra of the past four decades. 'Niner Two' is Mintzer in his signature mode: harmonically rich, rhythmically tight, demanding ensemble precision at every turn.</p>
           <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1357,7 +1329,6 @@ footer {
         <div class="track-notes-inner">
           <p>Gordon Goodwin's Big Phat Band has redefined what a modern jazz orchestra can sound like. 'Sing Sang Sung' fuses Basie-style swing with contemporary rhythmic and harmonic vocabulary, a fitting prelude to the night's Latin closer.</p>
           <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1374,7 +1345,6 @@ footer {
         <div class="track-notes-inner">
           <p>Composed by Texas-based Latin jazz veteran Joe Gallardo and arranged by Michael Philip Mossman, the internationally recognized trumpeter and one of the leading voices in Latin big band writing, 'Veneros' brings Afro-Cuban energy and layered percussion to the closing of the night.</p>
           
-          <a href="#" class="track-listen"><span class="play-icon"></span> Watch on YouTube</a>
         </div>
       </div>
     </li>
@@ -1791,8 +1761,7 @@ document.querySelectorAll('[data-track]').forEach((track, i) => {
     notes.id = id;
     track.setAttribute('aria-controls', id);
   }
-  const toggle = (e) => {
-    if (e && e.target && e.target.closest('.track-listen')) return;
+  const toggle = () => {
     const open = track.classList.toggle('open');
     track.setAttribute('aria-expanded', open ? 'true' : 'false');
   };
