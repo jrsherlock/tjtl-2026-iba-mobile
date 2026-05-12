@@ -603,10 +603,21 @@ section { padding: 5rem 1.5rem; position: relative; }
   color: var(--cream); font-weight: 400;
 }
 .track-soloists {
-  font-family: var(--label); font-weight: 600;
-  font-size: 0.66rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--gold);
-  margin-top: 0.4rem; line-height: 1.5;
+  font-family: var(--display-italic, var(--display));
+  font-style: italic; font-weight: 500;
+  font-size: 0.92rem; color: var(--gold);
+  margin-top: 0.55rem; line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.soloists-label {
+  display: inline-block;
+  font-family: var(--label); font-style: normal;
+  font-weight: 700; font-size: 0.55rem;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--red);
+  margin-right: 0.55rem;
+  position: relative; top: -1px;
 }
 .track-expand {
   width: 22px; height: 22px;
@@ -1315,7 +1326,7 @@ footer {
   <div class="section-head">
     <div class="eyebrow">The Set</div>
     <h2>Tonight's <em>Program</em></h2>
-    <p class="section-intro">Nine selections from the contemporary big band repertoire, in the order they will be performed.</p>
+    <p class="section-intro">Seven selections from the contemporary big band repertoire, in the order they will be performed.</p>
   </div>
 
   <div class="vinyl-art">
@@ -1353,75 +1364,56 @@ footer {
     <li class="track" data-track>
       <div class="track-num">01</div>
       <div class="track-body">
-        <div class="track-title">Bloo Phunk Strut</div>
-        <div class="track-credits">Michele Fernandez</div>
-        <div class="track-soloists">Featuring · Tenor Saxophone, Lead Trumpet</div>
+        <div class="track-title">Movin' Uptown</div>
+        <div class="track-credits">Benny Carter</div>
+        <div class="track-soloists"><span class="soloists-label">Soloists</span>James Tilley · Thomas Hand</div>
       </div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
-          <p>Grammy-nominated composer and educator Michele Fernandez has become one of the defining voices in contemporary big band writing. 'Bloo Phunk Strut' lives in the territory where blues meets funk, opening the night with the kind of pocket and pulse that wakes a room up.</p>
-          
+          <p>Benny Carter (1907–2003) — alto saxophonist, trumpeter, arranger, and bandleader — wrote and arranged across nearly eight decades, and is widely regarded as the architect of the modern saxophone section. 'Movin' Uptown' is a clinic in ensemble swing and sectional precision, and the right way to open a program.</p>
         </div>
       </div>
     </li>
     <li class="track" data-track>
       <div class="track-num">02</div>
       <div class="track-body">
-        <div class="track-title">Movin' Uptown</div>
-        <div class="track-credits">Benny Carter</div>
-        <div class="track-soloists">Featuring · Alto Saxophone, Trumpet</div>
+        <div class="track-title">Fresh Start</div>
+        <div class="track-credits">Marshall Gilkes</div>
+        <div class="track-soloists"><span class="soloists-label">Soloists</span>Linus McRoberts · Jillian Leman</div>
       </div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
-          <p>Benny Carter (1907 to 2003), alto saxophonist, trumpeter, arranger, and bandleader, wrote and arranged across nearly eight decades and is widely regarded as the architect of the modern saxophone section. 'Movin' Uptown' is a clinic in ensemble swing and sectional precision.</p>
-          
+          <p>Contemporary trombonist and composer Marshall Gilkes — whose work with Germany's WDR Big Band has reshaped the modern jazz orchestra — brings the harmonic depth and rhythmic intricacy of his small-group writing to the big band format in 'Fresh Start.'</p>
         </div>
       </div>
     </li>
     <li class="track" data-track>
       <div class="track-num">03</div>
       <div class="track-body">
-        <div class="track-title">Fresh Start</div>
-        <div class="track-credits">Marshall Gilkes</div>
-        <div class="track-soloists">Featuring · Trombone, Piano</div>
+        <div class="track-title">It's Oh, So Nice</div>
+        <div class="track-credits">Sammy Nestico</div>
+        <div class="track-soloists"><span class="soloists-label">Soloists</span>Alma Bhandary-Narayanan · Leif Larsen</div>
       </div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
-          <p>Contemporary trombonist and composer Marshall Gilkes, whose work with Germany's WDR Big Band has reshaped the modern jazz orchestra, brings the harmonic depth and rhythmic intricacy of his small-group writing to the big band format in 'Fresh Start.'</p>
-          
+          <p>Sammy Nestico (1924–2021) became Count Basie's chief arranger in 1967 and shaped the Basie band's sound through the golden era that followed. Widely regarded as the dean of modern big band writing, his charts carry pocket-deep swing, tight section voicings, and the unforced groove that defines an entire lineage of American big band literature.</p>
         </div>
       </div>
     </li>
     <li class="track" data-track>
       <div class="track-num">04</div>
       <div class="track-body">
-        <div class="track-title">A Child Is Born</div>
-        <div class="track-credits">Thad Jones · <em>arr. Bob Brookmeyer</em></div>
-        <div class="track-soloists">Featuring · Flugelhorn, Piano</div>
+        <div class="track-title">Jolly Beach</div>
+        <div class="track-credits">Annie Booth</div>
+        <div class="track-soloists"><span class="soloists-label">Soloists</span>James Tilley · Thomas Hand · Ethan Kardos</div>
       </div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
-          <p>Thad Jones' 1969 ballad has become one of the most-recorded standards in the modern big band canon. The chord movement and unmistakable melody make this a fixture of the literature, and a moment of repose mid-program.</p>
-          <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
-        </div>
-      </div>
-    </li>
-    <li class="track" data-track>
-      <div class="track-num">05</div>
-      <div class="track-body">
-        <div class="track-title">Cute</div>
-        <div class="track-credits">Neal Hefti</div>
-        <div class="track-soloists">Featuring · Drum Set</div>
-      </div>
-      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="track-notes">
-        <div class="track-notes-inner">
-          <p>Composed by Neal Hefti in 1958 and made famous by Count Basie, 'Cute' is one of the most beloved drum features in the big band literature. The chart's economy and the drummer's brushwork carry the whole tune.</p>
-          <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
+          <p>Annie Booth is a Denver-based pianist, composer, and arranger whose work has found its way into the contemporary big band repertoire. 'Jolly Beach' lives in the bright, harmonically rich territory where modern small-group writing meets full-ensemble scoring — a piece that lets the rhythm section and horns trade space.</p>
         </div>
       </div>
     </li>
@@ -1432,64 +1424,45 @@ footer {
     <div class="lp-divider-line"></div>
   </div>
 
-  <ol class="tracks" start="6">
+  <ol class="tracks" start="5">
     <li class="track" data-track>
-      <div class="track-num">06</div>
+      <div class="track-num">05</div>
       <div class="track-body">
-        <div class="track-title">Roy Allan</div>
-        <div class="track-credits">Roy Hargrove</div>
-        <div class="track-soloists">Featuring · Trumpet, Tenor Saxophone</div>
+        <div class="track-title">Breathing</div>
+        <div class="track-credits">Fred Sturm</div>
       </div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
-          <p>Roy Hargrove (1969 to 2018) was one of the defining trumpet voices of his generation, equally compelling in straight-ahead, Afro-Cuban, and contemporary settings. 'Roy Allan' showcases the lyricism and rhythmic poise that made his playing unmistakable.</p>
-          
+          <p>Fred Sturm (1951–2014) led the jazz studies program at Lawrence University for nearly three decades and is remembered as one of the most respected voices in the contemporary American big band canon. 'Breathing' asks an entire jazz orchestra to perform like a chamber ensemble — lyrical, transparent, harmonically deliberate. A moment of repose at the heart of tonight's program.</p>
+        </div>
+      </div>
+    </li>
+    <li class="track" data-track>
+      <div class="track-num">06</div>
+      <div class="track-body">
+        <div class="track-title">Veneros</div>
+        <div class="track-credits">Joe Gallardo · <em>arr. Michael Philip Mossman</em></div>
+        <div class="track-soloists"><span class="soloists-label">Soloists</span>Gideon Levine · Leif Larsen · Linus McRoberts · Max Nolte · Daniel Kenyon</div>
+      </div>
+      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="track-notes">
+        <div class="track-notes-inner">
+          <p>Composed by Texas-based Latin jazz veteran Joe Gallardo and arranged by Michael Philip Mossman — the internationally recognized trumpeter and one of the leading voices in Latin big band writing — 'Veneros' brings Afro-Cuban energy and layered percussion as the program turns toward its close.</p>
         </div>
       </div>
     </li>
     <li class="track" data-track>
       <div class="track-num">07</div>
       <div class="track-body">
-        <div class="track-title">Niner Two</div>
-        <div class="track-credits">Bob Mintzer</div>
-        <div class="track-soloists">Featuring · Tenor Saxophone, Bass</div>
+        <div class="track-title">Indra Kunindra</div>
+        <div class="track-credits">Ryan Middagh</div>
+        <div class="track-soloists"><span class="soloists-label">Soloists</span>Jack Harmsen · Gideon Levine · Frank Ogilvie · Thomas Hand · Ethan Kardos</div>
       </div>
       <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="track-notes">
         <div class="track-notes-inner">
-          <p>Bob Mintzer is a Grammy-winning saxophonist, arranger, and bandleader whose charts have been performed by every major jazz orchestra of the past four decades. 'Niner Two' is Mintzer in his signature mode: harmonically rich, rhythmically tight, demanding ensemble precision at every turn.</p>
-          <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
-        </div>
-      </div>
-    </li>
-    <li class="track" data-track>
-      <div class="track-num">08</div>
-      <div class="track-body">
-        <div class="track-title">Sing Sang Sung</div>
-        <div class="track-credits">Gordon Goodwin</div>
-        <div class="track-soloists">Featuring · Full Ensemble</div>
-      </div>
-      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="track-notes">
-        <div class="track-notes-inner">
-          <p>Gordon Goodwin's Big Phat Band has redefined what a modern jazz orchestra can sound like. 'Sing Sang Sung' fuses Basie-style swing with contemporary rhythmic and harmonic vocabulary, a fitting prelude to the night's Latin closer.</p>
-          <p style="color:var(--faint);font-style:italic;font-size:0.78rem;margin-top:0.5rem;">Selection to be confirmed by the directors.</p>
-        </div>
-      </div>
-    </li>
-    <li class="track" data-track>
-      <div class="track-num">09</div>
-      <div class="track-body">
-        <div class="track-title">Veneros</div>
-        <div class="track-credits">Joe Gallardo · <em>arr. Michael Philip Mossman</em></div>
-        <div class="track-soloists">Featuring · Trumpet, Percussion</div>
-      </div>
-      <div class="track-expand" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="track-notes">
-        <div class="track-notes-inner">
-          <p>Composed by Texas-based Latin jazz veteran Joe Gallardo and arranged by Michael Philip Mossman, the internationally recognized trumpeter and one of the leading voices in Latin big band writing, 'Veneros' brings Afro-Cuban energy and layered percussion to the closing of the night.</p>
-          
+          <p>Ryan Middagh is the director of jazz studies at Vanderbilt University's Blair School of Music and a respected voice in the contemporary big band literature. 'Indra Kunindra' closes the program — a layered, rhythmically charged piece that asks the ensemble to draw on every section's full range.</p>
         </div>
       </div>
     </li>
@@ -1720,7 +1693,7 @@ footer {
     </div>
     <div class="media-meta">
       <div class="media-platform">YouTube · Playlist</div>
-      <div class="media-title">Tonight's Program · All 9 Tracks</div>
+      <div class="media-title">Tonight's Program · All 7 Selections</div>
       <div class="media-sub">Studio recordings of every selection on tonight's set list</div>
     </div>
     <div class="media-arrow">→</div>
