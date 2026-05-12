@@ -31,10 +31,7 @@
 <!-- Fonts: trimmed weights, swap for fast first paint, preconnect for warm DNS/TCP -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Display pair: Big Shoulders Display (Reid Miles / Blue Note Records lineage)
-     for the heavy condensed sans display + Fraunces Italic as the classical
-     italic counterpoint, since Big Shoulders has no true italic. -->
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,500,40,1;1,9..144,700,50,1;1,9..144,900,70,1&family=Archivo:wght@600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,500,30,0;0,9..144,700,40,0;0,9..144,800,50,1;0,9..144,900,60,1;1,9..144,500,40,1;1,9..144,700,50,1;1,9..144,900,70,1&family=Archivo:wght@600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -53,45 +50,27 @@
   --gold-deep: #8b7340;
   --rule:      rgba(244,237,224,0.10);
   --rule-2:    rgba(244,237,224,0.18);
-  --display:         "Big Shoulders Display", "Trade Gothic", "Impact", "Oswald", sans-serif;
-  --display-italic:  "Fraunces", "Iowan Old Style", "Charter", "Georgia", serif;
-  --label:           "Archivo", "Helvetica Neue", sans-serif;
-  --body:            "Hanken Grotesk", "Helvetica Neue", sans-serif;
+  --display:   "Fraunces", "Iowan Old Style", "Charter", "Georgia", serif;
+  --label:     "Archivo", "Helvetica Neue", sans-serif;
+  --body:      "Hanken Grotesk", "Helvetica Neue", sans-serif;
 }
 
-/* ===== Display typography (Big Shoulders Display + Fraunces Italic) =====
-   Big Shoulders Display has no true italic, so every italic-display use is
-   routed to Fraunces. This produces the bold-condensed-sans + warm-italic-
-   serif lockup pattern used on mid-century jazz album covers (Blue Note,
-   Impulse!, Verve). */
-.hero-school, .hero-tag, .champ-sub, .section-intro,
-.lp-side, .section-group-name, .director-role,
-.musician-initials, .bio-year, .deco-divider-mark,
-.footer-motto, .group-photo-caption,
-.champ-stat-num, .track-num,
-h1 em, h2 em, .track-credits em, .featured-title em,
-.hero-title-line.italic, .champ-title em,
-.about-prose p:first-of-type::first-letter {
-  font-family: var(--display-italic);
-  font-style: italic;
-}
-
-/* Tighten the heavy-condensed display headings. Big Shoulders is already
-   narrow, so the negative tracking from the Fraunces pass relaxes. */
+/* Fraunces tuning — slight optical and tracking adjustments to compensate
+   for its wider x-height and warmer terminals vs. the prior Bodoni Moda. */
 h1, h2, h3,
-.hero-meta-value, .champ-title, .track-title,
-.featured-title, .media-title, .director-name,
-.bio-name, .footer-school, .musician-name, .thanks-text {
-  font-feature-settings: "kern", "liga", "calt", "ss01";
+.hero-meta-value, .hero-school, .hero-tag,
+.champ-title, .champ-sub, .champ-stat-num,
+.track-title, .track-num, .lp-side, .section-group-name,
+.featured-title, .media-title, .director-name, .director-role,
+.bio-name, .bio-year, .deco-divider-mark, .footer-school, .footer-motto,
+.musician-name, .musician-initials, .thanks-text {
+  font-feature-settings: "ss01", "ss02", "kern", "liga", "calt";
 }
-h1 { letter-spacing: -0.015em; }
-h2 { letter-spacing: -0.010em; }
-.champ-title { letter-spacing: -0.015em; }
-.track-title { letter-spacing: -0.005em; }
-/* track-num is italic-routed to Fraunces, keep it tight */
-.track-num { letter-spacing: -0.04em; }
-.lp-side { letter-spacing: -0.025em; }
-.champ-stat-num { letter-spacing: -0.03em; }
+h1 { letter-spacing: -0.035em; }
+h2 { letter-spacing: -0.022em; }
+.champ-title { letter-spacing: -0.028em; }
+.track-title { letter-spacing: -0.015em; }
+.track-num { letter-spacing: -0.06em; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html {
@@ -1181,8 +1160,8 @@ footer {
       <circle cx="100" cy="100" r="48" fill="none" stroke="rgba(244,237,224,0.06)" stroke-width="0.3"/>
       <circle cx="100" cy="100" r="36" fill="#c8102e"/>
       <circle cx="100" cy="100" r="36" fill="none" stroke="#e8c97a" stroke-width="0.4" opacity="0.4"/>
-      <text x="100" y="92" text-anchor="middle" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="10" letter-spacing="0.5" fill="#f4ede0">CITY HIGH</text>
-      <text x="100" y="103" text-anchor="middle" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="700" font-size="6.5" letter-spacing="0.5" fill="#f4ede0" opacity="0.9">JAZZ ENSEMBLE</text>
+      <text x="100" y="92" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="800" font-style="italic" font-size="9" fill="#f4ede0">CITY HIGH</text>
+      <text x="100" y="103" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="6" fill="#f4ede0" opacity="0.85">JAZZ ENSEMBLE</text>
       <text x="100" y="115" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="4" fill="#f4ede0" opacity="0.7" letter-spacing="0.2em">IBA · 2026</text>
       <circle cx="100" cy="100" r="3" fill="#0a0707"/>
     </svg>
