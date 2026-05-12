@@ -7,18 +7,18 @@
 <meta name="color-scheme" content="dark" />
 
 <title>City High Jazz Ensemble · IBA 2026</title>
-<meta name="description" content="The 2026 Iowa Class 4A State Champion City High Jazz Ensemble performs at the 97th Iowa Bandmasters Association Conference — Thursday, May 14, 2026 · 8:00 PM CT." />
+<meta name="description" content="Back-to-back Iowa Class 4A State Champions (2024 &amp; 2026), the City High Jazz Ensemble is the only Iowa high school jazz band performing at the 97th Iowa Bandmasters Association Conference — Thursday, May 14, 2026 · 8:00 PM CT." />
 <meta name="author" content="Iowa City High School Jazz Ensemble" />
 
 <!-- Link preview when the URL is shared via text / iMessage / Facebook / etc. -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="City High Jazz · IBA 2026" />
 <meta property="og:title" content="City High Jazz Ensemble · IBA 2026" />
-<meta property="og:description" content="2026 Iowa Class 4A Jazz Champions, live at the Iowa Bandmasters Association Conference — Thu, May 14, 2026 · 8:00 PM CT." />
+<meta property="og:description" content="Two-time Iowa Class 4A Jazz Champions (2024 &amp; 2026) — the only Iowa HS jazz band performing at the Iowa Bandmasters Association Conference — Thu, May 14, 2026 · 8:00 PM CT." />
 <meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="City High Jazz Ensemble · IBA 2026" />
-<meta name="twitter:description" content="2026 Iowa Class 4A Jazz Champions, live at the Iowa Bandmasters Association Conference — Thu, May 14, 2026 · 8:00 PM CT." />
+<meta name="twitter:description" content="Two-time Iowa Class 4A Jazz Champions (2024 &amp; 2026) — the only Iowa HS jazz band performing at the Iowa Bandmasters Association Conference — Thu, May 14, 2026 · 8:00 PM CT." />
 
 <!-- Favicon + Apple touch icon: inline SVG of the hawk on the deep-red field -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%230a0707'/><circle cx='32' cy='32' r='22' fill='%23c8102e'/><text x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-weight='900' font-size='28' fill='%23f4ede0'>J</text></svg>" />
@@ -419,6 +419,52 @@ h1 em, h2 em { font-style: italic; color: var(--red); font-weight: 800; }
   font-size: 0.6rem; letter-spacing: 0.24em;
   text-transform: uppercase; color: var(--muted);
   margin-top: 0.5rem; line-height: 1.3;
+}
+
+/* ===== Program highlights (the credibility bullets pulled from the poster) ===== */
+.champ-program {
+  margin: 2rem auto 0;
+  max-width: 560px;
+  text-align: left;
+}
+.champ-program-head {
+  display: flex; align-items: center; gap: 0.7rem;
+  margin-bottom: 1.1rem;
+  font-family: var(--label); font-weight: 700;
+  font-size: 0.62rem; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--gold);
+}
+.champ-program-head::before,
+.champ-program-head::after {
+  content: ""; flex: 1; height: 1px; background: var(--rule);
+}
+.champ-highlights {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 0.85rem;
+}
+.champ-highlights li {
+  display: grid; grid-template-columns: 1.2rem 1fr;
+  gap: 0.7rem; align-items: start;
+  font-family: var(--body); font-size: 0.92rem;
+  color: var(--cream); line-height: 1.5;
+}
+.champ-highlight-mark {
+  font-family: var(--display-italic, var(--display));
+  font-style: italic; font-weight: 900;
+  color: var(--red); font-size: 1.1rem;
+  line-height: 1; padding-top: 0.05rem;
+}
+.champ-highlights em {
+  font-family: var(--display-italic, var(--display));
+  font-style: italic; font-weight: 700;
+  color: var(--bone);
+}
+@media (min-width: 720px) {
+  .champ-highlights {
+    display: grid; grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
 }
 
 /* ===== GENERIC SECTION ===== */
@@ -1087,7 +1133,7 @@ footer {
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
         <path d="M12 2L14.39 8.26L21 9.27L16 14.14L17.18 21L12 17.77L6.82 21L8 14.14L3 9.27L9.61 8.26L12 2Z" fill="#c8102e"/>
       </svg>
-      2026 Iowa Jazz Champions · Class 4A
+      Iowa Class 4A Champions · 2024 &amp; 2026
     </div>
     <div class="hero-rule"></div>
     <div class="hero-school">City High School <em style="color:var(--red);font-style:normal;">·</em> Iowa City</div>
@@ -1134,21 +1180,48 @@ footer {
       width="1280" height="853"
       alt="The City High Jazz Ensemble with the 2026 Iowa Jazz Championships Class 4A trophy, gathered with Director Mr. Aaron Ottmar."
       loading="lazy" decoding="async">
-    <figcaption class="champ-medallion-caption">Class 4A · State Champions</figcaption>
+    <figcaption class="champ-medallion-caption">Iowa Jazz Championships · April 2026</figcaption>
   </figure>
-  <div class="champ-line-1">★ State Champions · 2026 ★</div>
+  <div class="champ-line-1">★ State Champions · 2024 &amp; 2026 ★</div>
   <h2 class="champ-title">Iowa's <em>#1</em> Class 4A<br>Jazz Ensemble</h2>
-  <p class="champ-sub">Crowned at the 2026 Iowa Jazz Championships, City High earns its place on the IBA stage among the state's finest.</p>
+  <p class="champ-sub">The only Iowa high school jazz band performing at this year's Iowa Bandmasters Association Conference.</p>
+
   <div class="champ-stats">
     <div>
-      <div class="champ-stat-num">1<sup style="font-size:1.2rem;vertical-align:super;">st</sup></div>
-      <div class="champ-stat-label">Class 4A<br>State Title</div>
+      <div class="champ-stat-num">2<sup style="font-size:1.2rem;vertical-align:super;">×</sup></div>
+      <div class="champ-stat-label">Class 4A State Titles<br>2024 · 2026</div>
     </div>
     <div class="champ-stat-divider"></div>
     <div>
       <div class="champ-stat-num">97<sup style="font-size:1.2rem;vertical-align:super;">th</sup></div>
       <div class="champ-stat-label">Annual IBA<br>Conference</div>
     </div>
+  </div>
+
+  <div class="champ-program">
+    <div class="champ-program-head">Program at a Glance</div>
+    <ul class="champ-highlights">
+      <li>
+        <span class="champ-highlight-mark">★</span>
+        <span>Four extracurricular jazz ensembles for City High music students.</span>
+      </li>
+      <li>
+        <span class="champ-highlight-mark">★</span>
+        <span>Open placement — every student who completes a September audition is placed in a jazz band.</span>
+      </li>
+      <li>
+        <span class="champ-highlight-mark">★</span>
+        <span>Annual jazz band trip to <em>Chicago</em>.</span>
+      </li>
+      <li>
+        <span class="champ-highlight-mark">★</span>
+        <span>Annual collaboration with a professional jazz musician at the <em>City High Jazz Showcase</em>.</span>
+      </li>
+      <li>
+        <span class="champ-highlight-mark">★</span>
+        <span>Recent invitations to perform alongside the <em>Iowa Jazz Composers Orchestra</em>, <em>UNI Jazz Band One</em>, and the <em>University of Iowa Johnson County Landmark Ensembles</em>.</span>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -1373,7 +1446,7 @@ footer {
         <div class="director-role">Director of Bands · City High School</div>
       </div>
     </div>
-    <p class="director-bio">Mr. Aaron Ottmar serves as Director of Bands at City High School, where he leads the school's jazz, concert, and wind ensembles. Under his direction, the City High Jazz Ensemble captured the 2026 Iowa Jazz Championships title in Class 4A and was selected to perform at the Iowa Bandmasters Association conference. <em style="color:var(--faint);">Full biography to follow from Mr. Ottmar.</em></p>
+    <p class="director-bio">Mr. Aaron Ottmar serves as Director of Bands at City High School, where he leads the school's jazz, concert, and wind ensembles. Under his direction, the City High Jazz Ensemble has captured the Iowa Jazz Championships Class 4A title in both 2024 and 2026 and was selected as the only Iowa high school jazz band performing at this year's Iowa Bandmasters Association Conference. <em style="color:var(--faint);">Full biography to follow from Mr. Ottmar.</em></p>
   </div>
 
   <!-- SAXOPHONES -->
@@ -1714,7 +1787,7 @@ const shareBtn = document.getElementById('shareBtn');
 shareBtn.addEventListener('click', async () => {
   const shareData = {
     title: 'City High Jazz Ensemble · IBA 2026',
-    text: 'The 2026 Iowa Class 4A Jazz Champions perform at the Iowa Bandmasters Association Conference — Thu, May 14, 2026 · 8:00 PM CT.',
+    text: 'Two-time Iowa Class 4A Jazz Champions (2024 & 2026) — the only Iowa HS jazz band performing at the Iowa Bandmasters Association Conference — Thu, May 14, 2026 · 8:00 PM CT.',
     url: window.location.href
   };
   try {
