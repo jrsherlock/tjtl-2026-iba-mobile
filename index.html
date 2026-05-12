@@ -549,11 +549,6 @@ section { padding: 5rem 1.5rem; position: relative; }
   color: var(--red); letter-spacing: -0.02em;
   line-height: 1;
 }
-.lp-side-sub {
-  font-family: var(--label); font-weight: 600;
-  font-size: 0.62rem; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--muted);
-}
 .lp-divider-line {
   flex: 1; height: 1px;
   background: linear-gradient(to right, var(--rule-2), transparent);
@@ -981,6 +976,73 @@ section { padding: 5rem 1.5rem; position: relative; }
   line-height: 1.5;
 }
 
+/* ===== MARQUEE (Blue Note IBA poster) =====
+   Sits between About and Footer as the final visual moment of the page —
+   a hand-printed poster pinned to the wall, lit from above. */
+.marquee {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(200,16,46,0.10) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink) 0%, #08050a 100%);
+  text-align: center;
+  border-top: 1px solid var(--rule);
+  overflow: hidden;
+}
+.marquee .section-head {
+  align-items: center; text-align: center;
+  margin-bottom: 1.6rem;
+}
+.marquee .section-head .eyebrow {
+  justify-content: center;
+}
+.marquee .section-head .eyebrow::before,
+.marquee .section-head .eyebrow::after {
+  content: ""; width: 24px; height: 1px; background: var(--red);
+}
+.marquee .section-head .eyebrow::after { display: inline-block; }
+.marquee-frame {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 4px;
+  background: var(--bone);
+  padding: 0;
+  box-shadow:
+    0 32px 60px -20px rgba(0,0,0,0.75),
+    0 12px 30px -8px rgba(200,16,46,0.18),
+    0 0 0 1px rgba(244,237,224,0.08);
+  position: relative;
+  transform: rotate(-0.4deg);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  isolation: isolate;
+}
+.marquee-frame:hover { transform: rotate(0deg) translateY(-2px); }
+.marquee-frame img {
+  display: block;
+  width: 100%; height: auto;
+  border-radius: 4px;
+}
+/* Tiny "pin" detail at the top centre — a single red dot reads as a
+   pushpin holding the poster up. */
+.marquee-frame::before {
+  content: "";
+  position: absolute;
+  top: -6px; left: 50%; transform: translateX(-50%);
+  width: 10px; height: 10px;
+  background: radial-gradient(circle at 30% 30%, #ff5a6e, #6a0816 70%);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6), inset 0 -1px 1px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+.marquee-caption {
+  margin: 1.3rem auto 0;
+  max-width: 36ch;
+  font-family: var(--display-italic, var(--display));
+  font-style: italic;
+  font-size: 0.95rem; color: var(--cream);
+  line-height: 1.45;
+}
+
 /* ===== FOOTER ===== */
 footer {
   padding: 3rem 1.5rem 4rem;
@@ -1054,7 +1116,7 @@ footer {
   body::before, body::after { display: none !important; }
   .topbar, .fab-top, .share-btn, .scroll-cue,
   .hero-glow, .vinyl-art, .group-photo,
-  .featured-watch, .media-card, .listen, .deco-divider { display: none !important; }
+  .featured-watch, .media-card, .listen, .deco-divider, .marquee { display: none !important; }
   .champ-medallion {
     max-width: 4.5in; margin: 0 auto 0.2in !important;
     box-shadow: none !important;
@@ -1069,7 +1131,7 @@ footer {
   h1, h2, h3 { color: #000 !important; }
   h1 em, h2 em, .lp-side, .track-num, .featured-title em { color: #6a0816 !important; }
   .eyebrow, .musician-instr, .track-soloists, .musician-honor,
-  .thanks-label, .lp-side-sub, .section-group-count, .hero-meta-label { color: #6a0816 !important; }
+  .thanks-label, .section-group-count, .hero-meta-label { color: #6a0816 !important; }
   .track-credits, .track-credits em, .section-intro, .director-role, .director-bio,
   .about-prose p, .musician-year, .footer-motto, .thanks-text, .bio-text, .featured-sub,
   .hero-meta-value, .hero-meta-sub, .hero-school { color: #222 !important; }
@@ -1275,7 +1337,6 @@ footer {
 
   <div class="lp-divider">
     <span class="lp-side">Side A</span>
-    <span class="lp-side-sub">Five Selections</span>
     <div class="lp-divider-line"></div>
   </div>
 
@@ -1359,7 +1420,6 @@ footer {
 
   <div class="lp-divider">
     <span class="lp-side">Side B</span>
-    <span class="lp-side-sub">Four Selections</span>
     <div class="lp-divider-line"></div>
   </div>
 
@@ -1795,6 +1855,24 @@ footer {
       <div class="thanks-text">To the parents and families who drive to early-morning rehearsals, host weekend sectionals, and believe in the work of this program. Thank you.</div>
     </div>
   </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<section class="marquee" aria-label="Tonight's poster">
+  <div class="section-head">
+    <div class="eyebrow gold">The Marquee</div>
+    <h2 style="text-align:center;">Tonight at <em>IBA</em></h2>
+  </div>
+  <figure class="marquee-frame">
+    <img
+      src="assets/iba-poster.jpg"
+      srcset="assets/iba-poster-sm.jpg 520w, assets/iba-poster.jpg 900w"
+      sizes="(min-width: 1024px) 440px, (min-width: 720px) 400px, 86vw"
+      width="900" height="1612"
+      alt="Poster: City High Jazz Ensemble at the Iowa Bandmasters Association 97th Annual Conference. Thursday, May 14, 2026. 8:00 PM Show. Des Moines, Iowa. Mr. Aaron Ottmar, Director of Bands."
+      loading="lazy" decoding="async">
+  </figure>
+  <p class="marquee-caption">Designed for the 97th Iowa Bandmasters Association Conference · May 14, 2026.</p>
 </section>
 
 <!-- ===== FOOTER ===== -->
