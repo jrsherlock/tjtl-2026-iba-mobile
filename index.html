@@ -650,15 +650,19 @@ section { padding: 5rem 1.5rem; position: relative; }
 
 .group-photo {
   width: 100%;
-  aspect-ratio: 4/3;
-  background:
-    linear-gradient(135deg, rgba(200,16,46,0.15), rgba(201,169,110,0.08)),
-    var(--ink-3);
+  aspect-ratio: 1235 / 835;
+  background: var(--ink-3);
   border-radius: 8px;
   margin-bottom: 2.5rem;
   position: relative; overflow: hidden;
-  display: grid; place-items: center;
+  display: block;
   border: 1px solid var(--rule-2);
+  box-shadow: 0 18px 50px rgba(200,16,46,0.10), 0 2px 6px rgba(0,0,0,0.4);
+}
+.group-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .group-photo-overlay {
   position: absolute; inset: 0;
@@ -1373,14 +1377,20 @@ footer {
   <div class="section-head">
     <div class="eyebrow">The Players</div>
     <h2>The <em>Ensemble</em></h2>
-    <p class="section-intro">Twenty student musicians. Tap any player for a bio.</p>
+    <p class="section-intro">Twenty-one student musicians. Tap any player for a bio.</p>
   </div>
 
-  <div class="group-photo">
-    <div class="group-photo-placeholder">[ Ensemble photo · Iowa Jazz Championships, April 2026 ]</div>
+  <figure class="group-photo">
+    <img
+      src="assets/ensemble-2026.jpg"
+      srcset="assets/ensemble-2026-sm.jpg 720w, assets/ensemble-2026.jpg 1280w"
+      sizes="(min-width: 1024px) 980px, (min-width: 720px) 90vw, 92vw"
+      width="1280" height="866"
+      alt="The 2026 City High Jazz Ensemble, on stage in concert dress with the red curtain backdrop, Director Mr. Aaron Ottmar standing center."
+      loading="lazy" decoding="async">
     <div class="group-photo-overlay"></div>
-    <div class="group-photo-caption">The 2026 Iowa Jazz Champions, Class 4A.</div>
-  </div>
+    <figcaption class="group-photo-caption">The 2026 City High Jazz Ensemble.</figcaption>
+  </figure>
 
   <!-- DIRECTOR -->
   <div class="director-card">
@@ -1399,40 +1409,50 @@ footer {
   <div class="section-group">
     <div class="section-group-head">
       <span class="section-group-name">Saxophones</span>
-      <span class="section-group-count">5 Players</span>
+      <span class="section-group-count">6 Players</span>
     </div>
     <div class="musicians-grid">
-      <div class="musician" data-bio data-name="Gideon Levine" data-instr="Alto Sax · Lead" data-year="Senior" data-initials="GL" data-honors="Senior" data-bio-text="Gideon is a senior and member of the City High Jazz Ensemble on lead alto saxophone. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="Gideon Levine" data-instr="Alto Sax · Lead" data-year="Senior · Third-year member" data-initials="GL" data-honors="2× All-State · Oberlin" data-bio-text="Gideon is a senior and third-year member of the City High Jazz Ensemble. He was selected for the Iowa All-State Band on baritone saxophone in 2024 and 2025, and for the SEIBA District Honor Jazz Band on alto saxophone in 2025.||He is also an avid classical pianist who has won several state-wide piano competitions, including the 2025 Terrace Hill Piano Competition and the 2025 Waterloo-Cedar Falls Symphony Young Artist Competition. Next fall, Gideon will attend Oberlin College and Conservatory in the dual-degree program to study Piano Performance and Psychology.">
         <div class="musician-photo"><span class="musician-initials">GL</span></div>
         <div class="musician-instr">Alto Sax · Lead</div>
         <div class="musician-name">Gideon Levine</div>
         <div class="musician-year">Senior</div>
+        <div class="musician-honor">2× All-State · Oberlin</div>
       </div>
-      <div class="musician" data-bio data-name="Jesse Varner" data-instr="Alto Sax" data-year="Senior" data-initials="JV" data-honors="Senior" data-bio-text="Jesse is a senior and member of the City High Jazz Ensemble on alto saxophone. Tonight, Jesse performs in the chair held this season by Silas Gollnick, who was unable to attend the IBA conference. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="Jesse Varner" data-instr="Alto Sax" data-year="Senior" data-initials="JV" data-honors="Penn · Huntsman" data-bio-text="Jesse is a senior heavily involved in the school's music and arts community through band, student leadership, and community outreach initiatives. Outside of music, Jesse is active in advocacy work focused on equity and expanding opportunities for students.||In his free time, he enjoys organizing community events and spending time with friends and family. Next year, Jesse will attend the University of Pennsylvania as a member of the Huntsman Program for International Studies and Business.">
         <div class="musician-photo"><span class="musician-initials">JV</span></div>
         <div class="musician-instr">Alto Sax</div>
         <div class="musician-name">Jesse Varner</div>
         <div class="musician-year">Senior</div>
+        <div class="musician-honor">Penn · Huntsman</div>
       </div>
-      <div class="musician" data-bio data-name="Jameson Sherlock" data-instr="Tenor Sax" data-year="Senior" data-initials="JS" data-honors="Senior" data-bio-text="Jameson is a senior and member of the City High Jazz Ensemble on tenor saxophone. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
-        <div class="musician-photo"><span class="musician-initials">JS</span></div>
-        <div class="musician-instr">Tenor Sax</div>
-        <div class="musician-name">Jameson Sherlock</div>
+      <div class="musician" data-bio data-name="Silas Gollnick" data-instr="Alto Sax" data-year="Senior · Second-year member" data-initials="SG" data-honors="3× All-State · Amherst" data-bio-text="Silas is a senior at City High School and has participated in the Jazz Ensemble for two years. He has been selected for the All-State Band the past three years and has earned recognition in multiple competitions, including a third-place finish at the prestigious MTNA national round.||In his free time, he likes to read, work out, and run. Next year, Silas will attend Amherst College for an undecided major while continuing his passion for music.">
+        <div class="musician-photo"><span class="musician-initials">SG</span></div>
+        <div class="musician-instr">Alto Sax</div>
+        <div class="musician-name">Silas Gollnick</div>
         <div class="musician-year">Senior</div>
+        <div class="musician-honor">3× All-State · Amherst</div>
       </div>
-      <div class="musician" data-bio data-name="James Tilley" data-instr="Tenor Sax" data-year="Senior" data-initials="JT" data-honors="Senior · SEIBA Honor · All-State Alternate" data-bio-text="James is a senior and member of the City High Jazz Ensemble on tenor saxophone. He was selected for the SEIBA Honor Jazz Band and named an Iowa All-State Jazz Band Alternate for 2026. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="James Tilley" data-instr="Tenor Sax" data-year="Senior · Third-year member" data-initials="JT" data-honors="2× All-State · Iowa State" data-bio-text="James is a senior and third-year member of the City High Jazz Ensemble. He was selected for the Iowa All-State Band on tenor saxophone in 2024 and 2025, and as an alternate for the 2026 4A All-State Jazz Band.||James also participates in Varsity Tennis, Senior Ambassadors, Show Choir Combo, and a student-led non-profit called the MIC (Music Impacts Community). He will attend Iowa State University in the spring to study Engineering, after completing training to join the Iowa Army National Guard Band.">
         <div class="musician-photo"><span class="musician-initials">JT</span></div>
         <div class="musician-instr">Tenor Sax</div>
         <div class="musician-name">James Tilley</div>
         <div class="musician-year">Senior</div>
-        <div class="musician-honor">SEIBA Honor · All-State Alt.</div>
+        <div class="musician-honor">2× All-State · Iowa State</div>
       </div>
-      <div class="musician" data-bio data-name="Thomas Hand" data-instr="Baritone Sax" data-year="Member of City High Jazz Ensemble" data-initials="TH" data-honors="SEIBA Honor · All-State Jazz Band" data-bio-text="Thomas is a member of the City High Jazz Ensemble on baritone saxophone. He was selected for the SEIBA Honor Jazz Band and the 2026 Iowa All-State Jazz Band. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="Jameson Sherlock" data-instr="Tenor Sax" data-year="Senior · First-year member" data-initials="JS" data-honors="Iowa · CS + Business" data-bio-text="Jameson is a senior and first-year member of the City High Jazz Ensemble. He has been involved in Choir, Show Choir, and Marching Band.||Next year, Jameson will attend the University of Iowa, pursuing Computer Science and Business, on a track to study at Fudan University in Shanghai.">
+        <div class="musician-photo"><span class="musician-initials">JS</span></div>
+        <div class="musician-instr">Tenor Sax</div>
+        <div class="musician-name">Jameson Sherlock</div>
+        <div class="musician-year">Senior</div>
+        <div class="musician-honor">Iowa · CS + Business</div>
+      </div>
+      <div class="musician" data-bio data-name="Thomas Hand" data-instr="Baritone Sax" data-year="Sophomore · First-year member" data-initials="TH" data-honors="2026 All-State · SEIBA Honor" data-bio-text="Thomas is a sophomore and first-year member of the City High Jazz Ensemble, involved in many different activities at City High. He was selected for the 4A All-State Jazz Band in 2026 on the baritone saxophone, as well as the 2026 SEIBA District Honor Jazz Band.||Outside of Jazz Band, he plays classical alto saxophone and runs Cross Country and Track. He hopes to continue playing saxophone in college.">
         <div class="musician-photo"><span class="musician-initials">TH</span></div>
         <div class="musician-instr">Baritone Sax</div>
         <div class="musician-name">Thomas Hand</div>
-        
-        <div class="musician-honor">SEIBA Honor · All-State</div>
+        <div class="musician-year">Sophomore</div>
+        <div class="musician-honor">2026 All-State · SEIBA Honor</div>
       </div>
     </div>
   </div>
@@ -1444,28 +1464,33 @@ footer {
       <span class="section-group-count">4 Players</span>
     </div>
     <div class="musicians-grid">
-      <div class="musician" data-bio data-name="Naomi Downing-Sherer" data-instr="Trumpet · Lead" data-year="Member of City High Jazz Ensemble" data-initials="ND" data-honors="" data-bio-text="Naomi is a member of the City High Jazz Ensemble on lead trumpet. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
-        <div class="musician-photo"><span class="musician-initials">ND</span></div>
+      <div class="musician" data-bio data-name="Jillian Leman" data-instr="Trumpet · Lead" data-year="Senior · Third-year member" data-initials="JL" data-honors="3× All-State · Michigan State" data-bio-text="Jillian is a senior and has been playing lead trumpet in the City High Jazz Ensemble for three years. She is also in Wind Ensemble, Marching Band, Choir, Show Choir, and Theater at City High.||Jillian has been selected for the All-State Band and Orchestra for the last three years. Next year, she will attend Michigan State University to major in Trumpet Performance.">
+        <div class="musician-photo"><span class="musician-initials">JL</span></div>
         <div class="musician-instr">Trumpet · Lead</div>
-        <div class="musician-name">Naomi Downing-Sherer</div>
+        <div class="musician-name">Jillian Leman</div>
+        <div class="musician-year">Senior</div>
+        <div class="musician-honor">3× All-State · Michigan State</div>
       </div>
-      <div class="musician" data-bio data-name="Cameron Echols" data-instr="Trumpet · Solo" data-year="Senior" data-initials="CE" data-honors="Senior" data-bio-text="Cameron is a senior and member of the City High Jazz Ensemble on trumpet, holding the solo chair. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="Cameron Echols" data-instr="Trumpet" data-year="Senior · Third-year member" data-initials="CE" data-honors="University of Iowa" data-bio-text="Cameron is a senior and third-year member of the City High Jazz Ensemble. He is involved in many musical activities, including Marching Band, Wind Ensemble, 4th Ave Jazz Company, Concert Choir, and Musical Theatre.||In the fall, Cameron will attend the University of Iowa.">
         <div class="musician-photo"><span class="musician-initials">CE</span></div>
-        <div class="musician-instr">Trumpet · Solo</div>
+        <div class="musician-instr">Trumpet</div>
         <div class="musician-name">Cameron Echols</div>
         <div class="musician-year">Senior</div>
+        <div class="musician-honor">University of Iowa</div>
       </div>
-      <div class="musician" data-bio data-name="Jack Harmsen" data-instr="Trumpet" data-year="Senior" data-initials="JH" data-honors="Senior" data-bio-text="Jack is a senior and member of the City High Jazz Ensemble on trumpet. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="Jack Harmsen" data-instr="Trumpet" data-year="Senior · First-year member" data-initials="JH" data-honors="3× All-State Horn · St. Olaf" data-bio-text="Jack is a senior with four years of jazz and band experience. He was selected for All-State on the French Horn for three years, and performed in the IBA-selected Wind Ensemble from City High in 2024.||This is his first year in the City High Jazz Ensemble, but he has played trumpet since middle school. Next year, Jack attends St. Olaf College to major in Horn Performance, continuing to play trumpet and sing on the side.">
         <div class="musician-photo"><span class="musician-initials">JH</span></div>
         <div class="musician-instr">Trumpet</div>
         <div class="musician-name">Jack Harmsen</div>
         <div class="musician-year">Senior</div>
+        <div class="musician-honor">3× All-State Horn · St. Olaf</div>
       </div>
-      <div class="musician" data-bio data-name="Jillian Leman" data-instr="Trumpet" data-year="Senior" data-initials="JL" data-honors="Senior" data-bio-text="Jillian is a senior and member of the City High Jazz Ensemble on trumpet. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
-        <div class="musician-photo"><span class="musician-initials">JL</span></div>
+      <div class="musician" data-bio data-name="Naomi Downing-Sherer" data-instr="Trumpet" data-year="Junior · Second-year member" data-initials="ND" data-honors="2× All-State" data-bio-text="Naomi is a junior and second-year member of the City High Jazz Ensemble. She was selected for the Iowa All-State Band on trumpet in 2023 and 2024.||She also plays trumpet in Wind Ensemble, Marching Band, and Show Choir Combo. Outside of band, Naomi participates in Cross Country, Track and Field, Mock Trial, and Environmental Club.">
+        <div class="musician-photo"><span class="musician-initials">ND</span></div>
         <div class="musician-instr">Trumpet</div>
-        <div class="musician-name">Jillian Leman</div>
-        <div class="musician-year">Senior</div>
+        <div class="musician-name">Naomi Downing-Sherer</div>
+        <div class="musician-year">Junior</div>
+        <div class="musician-honor">2× All-State</div>
       </div>
     </div>
   </div>
@@ -1522,31 +1547,31 @@ footer {
         <div class="musician-instr">Piano</div>
         <div class="musician-name">Willow Schultz</div>
       </div>
-      <div class="musician" data-bio data-name="Evan Farley" data-instr="Bass" data-year="Member of City High Jazz Ensemble" data-initials="EF" data-honors="" data-bio-text="Evan is a member of the City High Jazz Ensemble on bass. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
-        <div class="musician-photo"><span class="musician-initials">EF</span></div>
-        <div class="musician-instr">Bass</div>
-        <div class="musician-name">Evan Farley</div>
-      </div>
       <div class="musician" data-bio data-name="Beckett Tobin" data-instr="Bass" data-year="Member of City High Jazz Ensemble" data-initials="BT" data-honors="" data-bio-text="Beckett is a member of the City High Jazz Ensemble on bass. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
         <div class="musician-photo"><span class="musician-initials">BT</span></div>
         <div class="musician-instr">Bass</div>
         <div class="musician-name">Beckett Tobin</div>
       </div>
-      <div class="musician" data-bio data-name="Ethan Kardos" data-instr="Drum Set" data-year="Member of City High Jazz Ensemble" data-initials="EK" data-honors="" data-bio-text="Ethan is a member of the City High Jazz Ensemble on drum set. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="Evan Farley" data-instr="Bass" data-year="Member of City High Jazz Ensemble" data-initials="EF" data-honors="" data-bio-text="Evan is a member of the City High Jazz Ensemble on bass. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+        <div class="musician-photo"><span class="musician-initials">EF</span></div>
+        <div class="musician-instr">Bass</div>
+        <div class="musician-name">Evan Farley</div>
+      </div>
+      <div class="musician" data-bio data-name="Ethan Kardos" data-instr="Drums" data-year="Member of City High Jazz Ensemble" data-initials="EK" data-honors="" data-bio-text="Ethan is a member of the City High Jazz Ensemble on drums. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
         <div class="musician-photo"><span class="musician-initials">EK</span></div>
-        <div class="musician-instr">Drum Set</div>
+        <div class="musician-instr">Drums</div>
         <div class="musician-name">Ethan Kardos</div>
       </div>
-      <div class="musician" data-bio data-name="Daniel Kenyon" data-instr="Auxiliary Percussion" data-year="Senior" data-initials="DK" data-honors="Senior" data-bio-text="Daniel is a senior and member of the City High Jazz Ensemble on auxiliary percussion. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+      <div class="musician" data-bio data-name="Max Nolte" data-instr="Drums · Aux. Percussion" data-year="Member of City High Jazz Ensemble" data-initials="MN" data-honors="" data-bio-text="Max is a member of the City High Jazz Ensemble, splitting time between drum set and auxiliary percussion. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
+        <div class="musician-photo"><span class="musician-initials">MN</span></div>
+        <div class="musician-instr">Drums · Aux. Percussion</div>
+        <div class="musician-name">Max Nolte</div>
+      </div>
+      <div class="musician" data-bio data-name="Daniel Kenyon" data-instr="Aux. Percussion" data-year="Senior" data-initials="DK" data-honors="Senior" data-bio-text="Daniel is a senior and member of the City High Jazz Ensemble on auxiliary percussion. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
         <div class="musician-photo"><span class="musician-initials">DK</span></div>
-        <div class="musician-instr">Auxiliary Percussion</div>
+        <div class="musician-instr">Aux. Percussion</div>
         <div class="musician-name">Daniel Kenyon</div>
         <div class="musician-year">Senior</div>
-      </div>
-      <div class="musician" data-bio data-name="Max Nolte" data-instr="Vibraphone" data-year="Member of City High Jazz Ensemble" data-initials="MN" data-honors="" data-bio-text="Max is a member of the City High Jazz Ensemble on vibraphone. Additional bio details, including other City High activities, outside interests, and post-graduation plans, will appear here once received from the student.">
-        <div class="musician-photo"><span class="musician-initials">MN</span></div>
-        <div class="musician-instr">Vibraphone</div>
-        <div class="musician-name">Max Nolte</div>
       </div>
     </div>
   </div>
