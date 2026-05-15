@@ -767,6 +767,14 @@ section { padding: 5rem 1.5rem; position: relative; }
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(circle at 30% 20%, rgba(200,16,46,0.18), transparent 60%);
 }
+/* When a real headshot is provided, it overlays the initials. */
+.musician-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+}
 .musician-initials {
   font-family: var(--display); font-weight: 800;
   font-style: italic; font-size: 1.7rem;
@@ -836,6 +844,13 @@ section { padding: 5rem 1.5rem; position: relative; }
 .bio-photo::before {
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(circle at 30% 20%, rgba(200,16,46,0.2), transparent 60%);
+}
+.bio-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
 }
 .bio-photo .musician-initials { font-size: 2.2rem; }
 
@@ -1456,8 +1471,16 @@ footer {
         <div class="musician-year">Senior</div>
         <div class="musician-honor">2× All-State · Iowa State</div>
       </div>
-      <div class="musician" data-bio data-name="Jameson Sherlock" data-instr="Tenor Sax" data-year="Senior · First-year member" data-initials="JS" data-honors="Iowa · CS + Business" data-bio-text="Jameson is a senior and first-year member of the City High Jazz Ensemble. He has been involved in Choir, Show Choir, and Marching Band.||Next year, Jameson will attend the University of Iowa, pursuing Computer Science and Business, on a track to study at Fudan University in Shanghai.">
-        <div class="musician-photo"><span class="musician-initials">JS</span></div>
+      <div class="musician" data-bio data-name="Jameson Sherlock" data-instr="Tenor Sax" data-year="Senior · First-year member" data-initials="JS" data-honors="Iowa · CS + Business" data-photo="assets/players/jameson-sherlock.jpg" data-bio-text="Jameson is a senior and first-year member of the City High Jazz Ensemble. He has been involved in Choir, Show Choir, and Marching Band.||Next year, Jameson will attend the University of Iowa, pursuing Computer Science and Business, on a track to study at Fudan University in Shanghai.">
+        <div class="musician-photo">
+          <span class="musician-initials">JS</span>
+          <img src="assets/players/jameson-sherlock-sm.jpg"
+               srcset="assets/players/jameson-sherlock-sm.jpg 220w, assets/players/jameson-sherlock.jpg 440w"
+               sizes="(min-width: 1024px) 220px, (min-width: 720px) 30vw, 45vw"
+               width="220" height="220"
+               alt="Jameson Sherlock"
+               loading="lazy" decoding="async">
+        </div>
         <div class="musician-instr">Tenor Sax</div>
         <div class="musician-name">Jameson Sherlock</div>
         <div class="musician-year">Senior</div>
@@ -1804,7 +1827,7 @@ footer {
 <div class="bio-modal" id="bioModal" role="dialog" aria-modal="true" aria-labelledby="bioName" aria-hidden="true">
   <div class="bio-modal-card" role="document">
     <button class="bio-close" type="button" aria-label="Close biography">×</button>
-    <div class="bio-photo"><span class="musician-initials" id="bioInitials">—</span></div>
+    <div class="bio-photo" id="bioPhoto"><span class="musician-initials" id="bioInitials">—</span><img id="bioImg" alt="" hidden></div>
     <div class="musician-instr bio-instr" id="bioInstr">—</div>
     <div class="bio-name" id="bioName">—</div>
     <div class="bio-year" id="bioYear">—</div>
@@ -1911,6 +1934,7 @@ document.querySelectorAll('[data-track]').forEach((track, i) => {
 const modal = document.getElementById('bioModal');
 const modalCard = modal.querySelector('.bio-modal-card');
 const bioInitials = document.getElementById('bioInitials');
+const bioImg = document.getElementById('bioImg');
 const bioInstr = document.getElementById('bioInstr');
 const bioName = document.getElementById('bioName');
 const bioYear = document.getElementById('bioYear');
@@ -1923,6 +1947,15 @@ function openBio(m) {
   bioInstr.textContent = m.dataset.instr || '';
   bioName.textContent = m.dataset.name || '';
   bioYear.textContent = m.dataset.year || '';
+  // Swap in headshot when the card provides one; otherwise fall back to initials.
+  if (m.dataset.photo) {
+    bioImg.src = m.dataset.photo;
+    bioImg.alt = m.dataset.name || '';
+    bioImg.hidden = false;
+  } else {
+    bioImg.hidden = true;
+    bioImg.removeAttribute('src');
+  }
   const paragraphs = (m.dataset.bioText || '').split('||');
   bioText.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
   lastFocusedTrigger = m;
