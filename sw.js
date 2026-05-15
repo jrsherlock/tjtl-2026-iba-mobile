@@ -3,7 +3,7 @@
 // network. Strategy is stale-while-revalidate for the HTML + cache-first for
 // fonts. Bump CACHE_VERSION to force a refresh after content updates.
 
-const CACHE_VERSION = 'chj-iba-2026-v9';
+const CACHE_VERSION = 'chj-iba-2026-v10';
 const CORE = [
   '/', '/index.html',
   '/assets/champions-2026.jpg',
@@ -40,7 +40,19 @@ const CORE = [
   '/assets/players/coraline-etler.jpg',
   '/assets/players/coraline-etler-sm.jpg',
   '/assets/players/frank-ogilvie.jpg',
-  '/assets/players/frank-ogilvie-sm.jpg'
+  '/assets/players/frank-ogilvie-sm.jpg',
+  '/assets/players/willow-schultz.jpg',
+  '/assets/players/willow-schultz-sm.jpg',
+  '/assets/players/beckett-tobin.jpg',
+  '/assets/players/beckett-tobin-sm.jpg',
+  '/assets/players/evan-farley.jpg',
+  '/assets/players/evan-farley-sm.jpg',
+  '/assets/players/ethan-kardos.jpg',
+  '/assets/players/ethan-kardos-sm.jpg',
+  '/assets/players/max-nolte.jpg',
+  '/assets/players/max-nolte-sm.jpg',
+  '/assets/players/daniel-kenyon.jpg',
+  '/assets/players/daniel-kenyon-sm.jpg'
 ];
 
 self.addEventListener('install', (event) => {
