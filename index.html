@@ -703,10 +703,19 @@ section { padding: 5rem 1.5rem; position: relative; }
   font-family: var(--display); font-weight: 800;
   font-style: italic; font-size: 1.7rem; color: var(--bone);
   flex-shrink: 0; position: relative;
+  overflow: hidden;
+}
+.director-photo img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
 }
 .director-photo::after {
   content: ""; position: absolute; inset: -3px;
   border-radius: 50%; border: 1px solid var(--rule-2);
+  z-index: 2;
 }
 .director-meta { flex: 1; }
 .director-meta .eyebrow { margin-bottom: 0.35rem; display: block; }
@@ -1410,7 +1419,15 @@ footer {
   <!-- DIRECTORS -->
   <div class="director-card">
     <div class="director-head">
-      <div class="director-photo">AO</div>
+      <div class="director-photo">
+        AO
+        <img src="assets/directors/aaron-ottmar-sm.jpg"
+             srcset="assets/directors/aaron-ottmar-sm.jpg 220w, assets/directors/aaron-ottmar.jpg 440w"
+             sizes="84px"
+             width="220" height="220"
+             alt="Mr. Aaron Ottmar"
+             loading="lazy" decoding="async">
+      </div>
       <div class="director-meta">
         <span class="eyebrow">Conductor &middot; Tonight</span>
         <div class="director-name">Mr. Aaron Ottmar</div>
@@ -1424,7 +1441,15 @@ footer {
 
   <div class="director-card">
     <div class="director-head">
-      <div class="director-photo">MK</div>
+      <div class="director-photo">
+        MK
+        <img src="assets/directors/mike-kowbel-sm.jpg"
+             srcset="assets/directors/mike-kowbel-sm.jpg 220w, assets/directors/mike-kowbel.jpg 440w"
+             sizes="84px"
+             width="220" height="220"
+             alt="Mr. Mike Kowbel"
+             loading="lazy" decoding="async">
+      </div>
       <div class="director-meta">
         <span class="eyebrow">Co-Director of Bands</span>
         <div class="director-name">Mr. Mike Kowbel</div>
